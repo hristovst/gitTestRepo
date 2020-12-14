@@ -1,0 +1,61 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" merge="merge = ALL" id="2">
+      <name>
+        start#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="485" y="105" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" merge="merge = ALL" id="3">
+      <name>
+        end#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="485" y="435" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="testAT" description="testAT#ResolveContent?" tooltip="" href="" merge="merge = ALL" id="7">
+      <name>
+        testAT#ResolveContent
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="440" y="250" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="Task" description="" tooltip="" href="" merge="merge = ALL" id="9">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="340" y="320" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" order="99999" id="8">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="2" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="500" y="135" as="sourcePoint"/>
+          <mxPoint x="500" y="435" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="10">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="7" target="9" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="11">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="9" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,23 @@
+def condition = "good";
+def severity = "good";
+def summary = "";
+def detail = RAW;
+
+if(RAW.contains("FAIL")) {
+    def lines = RAW.split("\n")
+	lines.each{ line ->
+		if (line =~ /^FAIL/) {
+			condition = "bad"
+			severity = "critical"
+			summary += line - "FAIL - ";
+		}
+	}
+}
+else {
+	summary = "The ssh script executed successfully in IP address: "+ INPUTS["IPADDRESS"];
+}
+
+RESULT.condition = condition;
+RESULT.severity = severity;
+RESULT.summary = summary;
+RESULT.detail = detail;

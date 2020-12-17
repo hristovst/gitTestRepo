@@ -1,0 +1,44 @@
+{section:type=source|title=main}
+1 Loop
+
+
+* [Back to Test List>RSQA.Automated Home]</br></br>
+
+1.1 What This Runbook Is Trying to Test
+This runbook tests looping and conditional paths.  This test runs the loop and comment action tasks 5 times, after the fifth time the counter in loop will hit 0, this will cause the loop's condition to be bad and for the loop to proceed to the end of the of the runbook instead of proceeding to the comment actiontask again.</br></br>
+
+1.1 Run Task
+<form name="form1" action="$wiki.action.execute">
+<input type="hidden" alt="RSQA_TEST_RUNBOOK" name="WIKI" value="$doc.getFullName()">
+<input type="hidden" name="action" value="EXECUTEPROCESS" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="button" name="Execute" value="Execute" onclick="$wiki.action.executeRunbook('form1');" />
+</form>
+
+
+{result}
+{result}
+
+
+
+{default}
+{default}
+{section}
+{section:type=SOURCE|title=dt_final_auto_answer.test_dt01_52|id=rssection_1755000103091174494}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "final_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "52")
+{decision:type=combobox|question=Question#3|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>Doc3.Creating the Runbook Wiki Document{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=final_auto_answer.test_dt01&NODE_ID=70&ANSWER_TEXT=Doc3.Creating the Runbook Wiki Document&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":"<=","operand":"5","taskName":"","outputName":"","id":""}]{pre}
+{pre}<div class="x-hidden" name="99999"></div>XQueryResolve.resolve_134435{pre}={pre}XQueryResolve.resolve_134435?ROOT=final_auto_answer.test_dt01&NODE_ID=68&ANSWER_TEXT=XQueryResolve.resolve_134435&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":">=","operand":"6","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_nspace.test011_52|id=rssection_-1828895679099311125}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.test011" && $!wikiContext.getAttribute("NODE_ID") == "52")
+{decision:type=radio|question=Question#3|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>Doc3.Creating the Runbook Wiki Document{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspace.test011&NODE_ID=70&ANSWER_TEXT=Doc3.Creating the Runbook Wiki Document&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":"<=","operand":"5","taskName":"","outputName":"","id":""}]{pre}
+{pre}<div class="x-hidden" name="99999"></div>XQueryResolve.resolve_134435{pre}={pre}XQueryResolve.resolve_134435?ROOT=nspace.test011&NODE_ID=68&ANSWER_TEXT=XQueryResolve.resolve_134435&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":">=","operand":"6","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}

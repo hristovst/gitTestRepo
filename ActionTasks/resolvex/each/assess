@@ -1,0 +1,68 @@
+def condition = "good"
+def severity = "good"
+def summary = ""
+def detail = ""
+
+def currentItem = ""
+def in_loop_count = FLOWS["_LOOP_COUNT_"]
+def in_max_count = FLOWS["_MAX_COUNT_"]
+def loop_count = (in_loop_count || in_loop_count == 0) ? in_loop_count : 0
+def remainingItems = FLOWS["_LOOP_ITEMS_"]
+if (loop_count == 0 && !remainingItems)
+{
+    remainingItems = INPUTS["LOOP_ITEMS"]
+}
+def max_count  = (in_max_count) ? in_max_count : remainingItems != null ? remainingItems.size() : 0;
+
+if(remainingItems)
+{
+    if(loop_count > max_count)
+    {
+        condition = "bad"
+        severity = "critical"
+        summary = "Error has occurred."
+        
+        // reset the loop count in case this is used again
+        loop_count = 0
+        max_count = 0
+    }
+    else
+    {
+        currentItem = remainingItems.pop()
+        ++loop_count
+        condition = "good";
+        severity = "good";
+        summary = "Continuing loop. Items remaining: ${remainingItems.size()}"
+        detail += "Current Item: $currentItem"
+        detail += "\nRemaining Items:"
+        remainingItems.each 
+        { i ->
+            detail += "\n\t$i"
+        }
+    }
+}
+else if ((loop_count >= max_count) && max_count != 0)
+{
+    condition = "bad"
+    summary = "Loop completed"
+    loop_count = 0
+    max_count = 0
+}
+else
+{
+    condition = "bad"
+    severity = "critical"
+    summary = "No loop items provided."
+    loop_count = 0
+    max_count = 0
+}
+
+OUTPUTS["NEXT_ITEM"] = currentItem
+FLOWS["_LOOP_ITEMS_"] = remainingItems
+FLOWS["_LOOP_COUNT_"] = loop_count
+FLOWS["_MAX_COUNT_"] = max_count
+
+RESULT.condition = condition
+RESULT.severity = severity
+RESULT.summary = summary
+RESULT.detail = detail

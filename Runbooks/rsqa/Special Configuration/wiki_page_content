@@ -1,0 +1,88 @@
+{section:type=SOURCE|title=main|id=rssection_main|height=-1}
+1 RSQA Tests
+* [back to RSQA WebHome>RSQA.WebHome]
+{section}
+{section:type=SOURCE|title=Run Tests|id=rssection_1310667729992|height=-1}
+1.1 RSQA Tests
+
+#set ($excludes = "'RSQA Resolve3 Tests', 'RSQA Resolve2 Tests', 'JSUtils', 'jQuery171', 'Problem ID Setter'")
+#set ($sql = "doc.UNamespace = 'RSQA' and doc.UTag like '%RSQA_Config' ORDER BY doc.UName")
+
+<form action="$wiki.action.execute" method="POST">
+<input type="hidden" name="action" value="EXECUTEPROCESS" />
+<input type="hidden" name="PROCESS_DEBUG" value="true" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="hidden" name="wiki" value="$doc.getFullName()" />
+<input type="hidden" name="tests" id="tests" value="" />
+
+#set ($count = 0)
+{table}
+Test | Description <span style="float:right">Repeat: <input type="text" name="REPEAT" id="DynamicRepeat" value="1" size="3"/> Interval: <input type="text" name="INTERVAL" id="DynamicInterval" size="3" value="1"/></span>
+#foreach ($item in $wiki.searchDocuments($sql))
+#set ($count = $count + 1)
+<input type="checkbox" name="test" value="$item.fullName"> [$item.fullName]  | $item.summary
+#end
+<input type="button" value="Select All" onclick="return checkAll()"/> <input type="button" value="Select None" onclick="return uncheckAll()" align="right"/> <input type="submit" value="Execute" onclick="return checkTests()" /> 
+Total: $count
+{table}
+
+</form>
+
+{pre}
+<script type="text/javascript">
+function checkTests()
+{
+  var test = document.getElementsByName("test");
+
+  if(test == null)
+  {
+    return false;
+  }
+  var testStr = "";
+  for(var i=0; i<test.length; i++)
+  {
+    if(test[i].checked)
+    {
+      testStr += test[i].value + ",";
+    }
+  }
+  if(testStr == "")
+  {
+    return false;
+  }
+  else
+  {
+    var tests = document.getElementById("tests");
+    tests.value = testStr;
+    return true;
+  }
+}
+
+function checkAll()
+{
+  var test = document.getElementsByName("test");
+  if(test == null)
+  {
+    return;
+  }
+  for(var i=0; i<test.length; i++)
+  {
+    test[i].checked = true;
+  }
+}
+
+function uncheckAll()
+{
+  var test = document.getElementsByName("test");
+  if(test == null)
+  {
+    return;
+  }
+  for(var i=0; i<test.length; i++)
+  {
+    test[i].checked = false;
+  }
+}
+</script>
+{pre}
+{section}

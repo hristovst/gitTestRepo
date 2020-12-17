@@ -1,0 +1,15 @@
+if(!FLOWS['xyz']) {
+    FLOWS['xyz'] = 5
+    RESULT.summary = '5'
+    FLOWS['continue'] = 'true'
+}
+else {
+    FLOWS['xyz']-- 
+    if(FLOWS['xyz'] < 1) {
+        FLOWS['continue'] = 'false'
+    }
+    else {
+        FLOWS['continue'] = 'true'
+    }
+    RESULT.summary = FLOWS['xyz']
+}

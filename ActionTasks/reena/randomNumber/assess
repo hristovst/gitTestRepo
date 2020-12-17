@@ -1,0 +1,8 @@
+Random rn = new Random();
+int answer = rn.nextInt(10) + 1;
+//WSDATA['RANDOM_NUMBER'] = answer;
+WSDATA["OUTPUT"]=answer;
+
+OUTPUTS["OUTPUT"]= answer;
+RESULT.summary = answer;
+RESULT.detail = answer;

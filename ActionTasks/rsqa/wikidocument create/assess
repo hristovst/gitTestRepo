@@ -1,0 +1,41 @@
+def params = new HashMap()
+
+
+
+def username = INPUTS['USERNAME']
+
+def namespace = INPUTS['NAMESPACE']
+
+def docname = INPUTS['DOCNAME']
+
+
+
+def content = INPUTS['WIKI_CONTENT']
+
+content += "\n<br />\n<br/>\n"
+
+content += "This document was created using ESB by ${username}"
+
+content += "\n<br />\n"
+
+content += "The name of this document is ${namespace}.${docname}"
+
+content += "\n<br /> \n"
+
+content += "Updated on: ${new GregorianCalendar().getTime().toString()}"
+
+
+
+params.put("USERNAME", username.toString())
+
+params.put("namespace", namespace.toString())
+
+params.put("docname", docname.toString())
+
+params.put("content", content.toString())
+
+params.put("contentType", 'SOURCE')
+
+
+
+ESB.sendMessage('RSVIEW', 'MWiki.create', params)

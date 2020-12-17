@@ -1,0 +1,81 @@
+import com.resolve.connect.EmailConnect;
+
+import java.util.Properties;
+
+import javax.mail.Message;
+
+import javax.mail.Session;
+
+import javax.mail.internet.InternetAddress;
+
+import javax.mail.internet.MimeMessage;
+
+
+
+String smtpHostName = INPUTS["smtpHostName"];
+
+int smtpHostPort = INPUTS["smtpHostPort"].toInteger();
+
+String smtpAuthUser = INPUTS["smtpAuthUser"];
+
+String smtpAuthPassword = INPUTS["smtpAuthPassword"];
+
+
+
+String recipient = INPUTS["recipient"];
+
+String subject = INPUTS["subject"];
+
+String content = INPUTS["content"];
+
+String type = "text/html; charset=ISO-8859-1";
+
+String header = "<h1>This is heading 1</h1>";
+
+String text  = "<p style=font: 14pt/20pt Garamond, Georgia, serif;color:#ff9900;>This font is 14pt, the line height is 20pt, it's color is orange, and the font family will be 'Garamond'. If the user's computer doesn't have 'Garamond', it will use 'Georgia'. Failing that it will use the default 'serif' font on the user's computer (this is often 'Times' or 'Times Roman' - just leave it as 'serif'). You can also specify <span style=font-weight:bold;>bold text</span> and <span style=font-style:italic>italics</span> if you wish!</p>";
+
+
+
+content = content + "\n" + header +  "\n" + text;
+
+
+
+
+
+Properties props = new Properties();
+
+props.put("mail.transport.protocol", "smtps");
+
+props.put("mail.smtps.host", smtpHostName);
+
+props.put("mail.smtps.auth", "true");
+
+
+
+Session mailSession = Session.getDefaultInstance(props);
+
+
+
+MimeMessage message = new MimeMessage(mailSession);
+
+message.setSubject(subject);
+
+message.setContent(content, type);
+
+
+
+message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+
+
+
+def mail = new EmailConnect("smtp.gmail.com", 465, smtpAuthUser,smtpAuthPassword);
+
+mail.setMessage(message);
+
+mail.send();
+
+mail.close();
+
+
+
+return "Done"

@@ -1,0 +1,28 @@
+import com.resolve.notification.NotificationAPI;
+
+def result = "Notification sent successfully";
+try
+{
+    def to = INPUTS["TO"]
+    def cc = INPUTS["CC"]
+    def bcc = INPUTS["BCC"]
+    def from = INPUTS["FROM"]
+    def subject = INPUTS["SUBJECT"]
+    def content = INPUTS["CONTENT"]
+    def attachments = INPUTS["ATTACHMENTS"]
+    
+    NotificationAPI.send(to, cc, bcc, from, subject, content, attachments);
+    
+    //If the username name of a "Resolve" user is known then the "sendToUser" method can be called.
+    //NotificationAPI.sendToUser("userName", null, content, attachments);
+    
+    //If the group name of a "Resolve" group is known then the "sendToGroup" method can be called.
+    //NotificationAPI.sendToGroup("grpname", "my content", null)
+}
+catch (Exception e)
+{
+    LOG.error(e.getMessage());
+    result = "FAILED to send notification";
+}
+
+return result;

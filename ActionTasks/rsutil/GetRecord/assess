@@ -1,0 +1,32 @@
+import com.resolve.persistence.util.EntityUtil;
+import com.resolve.util.StringUtils;
+
+def entityName = INPUTS["ENTITY_NAME"];
+def sysId = INPUTS["SYS_ID"];
+def columns = INPUTS["COLUMNS"];
+
+LOG.debug("Entity name:" + entityName);
+LOG.debug("SysId:" + sysId);
+LOG.debug("Columns:" + columns);
+
+Map<String,Object> result = EntityUtil.findById(entityName, sysId);
+
+if(result)
+{
+    List<String> columnList = StringUtils.convertStringToList(columns, ",");
+    for(String key: result.keySet())
+    {
+        if(columnList)
+        {
+            if(columnList.contains(key))
+            {
+                OUTPUTS[key] = result[key];
+            }
+        }
+    }
+}
+
+RESULT.condition="good";
+RESULT.severity="good";
+RESULT.summary="Data received";
+RESULT.detail=result;

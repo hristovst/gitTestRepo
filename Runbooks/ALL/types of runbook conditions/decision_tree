@@ -1,0 +1,41 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Root" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="175" y="55" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <Question label="Question" description="" id="3">
+      <mxCell style="rhombus;labelBackgroundColor=none;strokeColor=#FFA500;fillColor=#FFA500;gradientColor=white;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="175" y="165" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Question>
+    <Document label="AJAX.DeleteMSOData" description="" id="4">
+      <mxCell style="labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#66CC33;gradientColor=white;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="40" y="270" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Document>
+    <Document label="AJAX.GetMSOEntity" description="" id="5">
+      <mxCell style="labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#66CC33;gradientColor=white;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="220" y="250" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Document>
+    <Edge label="" description="" order="99999" id="6">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="2" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="7">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="3" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="8">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="3" target="5" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

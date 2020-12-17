@@ -1,0 +1,59 @@
+import com.resolve.persistence.util.EntityUtil;
+import com.resolve.util.StringUtils;
+
+def entityName = INPUTS["ENTITY_NAME"];
+def sysId = INPUTS["SYS_ID"];
+def columns = INPUTS["COLUMNS"];
+def values = INPUTS["VALUES"];
+
+LOG.debug("Entity name:" + entityName);
+LOG.debug("SysId:" + sysId);
+LOG.debug("Columns:" + columns);
+LOG.debug("Values:" + values);
+
+RESULT.condition="good";
+RESULT.severity="good";
+RESULT.summary="Updated successfully";
+RESULT.detail="Updated successfully";
+
+if(sysId)
+{
+    Map<String,Object> data = EntityUtil.findById(entityName, sysId);
+    def columnList = StringUtils.convertStringToList(columns, ",");
+    if(data)
+    {
+        if(values)
+        {
+            println("I still see VALUES");
+            def valueList = StringUtils.convertStringToList(values, ",");
+            for(int i = 0; i < columnList.size(); i++)
+            {
+                data.put(columnList.get(i),valueList.get(i));
+            }
+        }
+        else
+        {
+            println("I don't see VALUES, going after INPUTS");
+            for(String key : columnList)
+            {
+                println("KEY:" + key + ">>>>>" + INPUTS[key]);
+                data.put(key,INPUTS[key]);
+            }    
+        }
+        EntityUtil.update(entityName, data);
+    }
+    else
+    {
+        RESULT.condition="bad";
+        RESULT.severity="bad";
+        RESULT.summary="Record not found";
+        RESULT.detail="Record not found";
+    }
+}
+else
+{
+    RESULT.condition="bad";
+    RESULT.severity="bad";
+    RESULT.summary="SYS_ID must be provided";
+    RESULT.detail="SYS_ID must be provided";
+}

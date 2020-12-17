@@ -1,0 +1,119 @@
+def condition = "good";
+def severity = "good";
+def summary = "Tests Run";
+def detail = "The following tests have been run:";
+def failed = "";
+def repeat = INPUTS["REPEAT"];
+def interval = INPUTS["INTERVAL"];
+def currentTest = "";
+
+try
+{
+    repeat = repeat.toInteger();
+    interval = interval.toInteger();
+
+    def resultStmt = DB.prepareStatement("select u_content, u_fullname, u_summary from wikidoc where u_fullname = ?");
+
+    def tests = INPUTS["TESTS"].split(",");
+
+    def paramList = [];
+
+    for(test in tests)
+    {
+        currentTest = test
+        DEBUG.println("Processing Test: "+currentTest)
+
+        resultStmt.setString(1, test);
+
+        def results = resultStmt.executeQuery();
+        if(results.next())
+        {
+            def content = results.getString("u_content");
+            def testCase = results.getString("u_fullname");
+            def description = results.getString("u_summary");
+            def wiki = "";
+
+            def params = [:];
+            for(line in content.split("\n"))
+            {
+                if(line.contains("RSQA_TEST_RUNBOOK"))
+                {
+                    def matcher = line =~ /.*value\s*=\s*\"(.*?)\".*/;
+                    wiki = matcher[0][1];
+                }
+                if(line.contains("RSQA_TEST_PARAMS") || line.contains("RSQA_TEST_PARAM"))
+                {
+                    def matcher = line =~ /.*name\s*=\s*\"(.*?)\".*/;
+                    def key = matcher[0][1];
+                    matcher = line =~ /.*value\s*=\s*\"(.*?)\".*/;
+                    def value = matcher[0][1];
+                    params[key] = value;
+                }
+            }
+            if(wiki == "" || testCase == null || testCase =="")
+            {
+                failed += test + "\n";
+            }
+            else
+            {
+                params["WIKI"] = wiki
+                params["SUMMARY"] = testCase
+                params["PROBLEMID"] = "NEW"
+                params["DESCRIPTION"] = description
+                params["PROCESS_DEBUG"] = "true"
+                params["USERID"] = USERID
+
+                paramList.add(params)
+                DEBUG.println("Adding Test: " + params)
+
+                detail += "\n" + testCase;
+            }
+        }
+        else
+        {
+            failed += "\n" + test;
+        }
+
+        DEBUG.println("Processed Test: "+currentTest)
+    }
+
+    currenTest = "Executing Test Set"
+    for (int i=0; i<repeat; i++)
+    {
+        DEBUG.println("Executing Set: " + i);
+        for (params in paramList)
+        {
+            ESB.sendMessage("RSCONTROL","MAction.executeProcess",params);
+        }
+        if ((i+1) < repeat)
+        {
+            Thread.sleep(interval * 1000);
+        }
+    }
+
+    detail += "\n\n" + repeat + " (repeat) Sets Execute";
+}
+catch(Exception e)
+{
+    summary = "Run Failed Test: " + currentTest + "\n\n"+ e.getMessage();
+    detail = e.getMessage();
+    for(trace in e.getStackTrace())
+    {
+        detail += "\n\t" + trace;
+    }
+
+    condition = "bad";
+    severity = "critical";
+}
+
+if(failed != "")
+{
+    condition = "bad";
+    severity = "warn";
+    detail += "\n\n The following tests failed to run:\n" + failed;
+}
+
+RESULT.condition = condition;
+RESULT.severity = severity;
+RESULT.summary = summary;
+RESULT.detail = detail;

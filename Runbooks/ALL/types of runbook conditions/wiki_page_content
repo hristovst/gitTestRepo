@@ -1,0 +1,48 @@
+{section:type=form|title=Untitled Section}
+{form:name=CURRENT123}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=BAD, UNKNOWN|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=BAD, UNKNOWN|progress=true|selectAll=true|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+
+{result2}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=GOOD, WARNING, SEVERE, CRITICAL, UNKNOWN|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=GOOD,WARNING,SEVERE,CRITICAL,UNKNOWN|progress=true|selectAll=true|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+
+{result2}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=GOOD, WARNING, SEVERE, CRITICAL,BAD|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=GOOD, WARNING, SEVERE, CRITICAL,BAD|progress=true|selectAll=true|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+
+{result2}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=BAD|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=BAD|progress=true|selectAll=true|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+
+{result2}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=GOOD, BAD,  SEVERITY|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=GOOD, BAD, SEVERITY|progress=true|selectAll=true|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+
+{result2}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=WARNING, SEVERE, UNKNOWN, BAD|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=WARNING,SEVERE,UNKNOWN,BAD|progress=true|selectAll=true|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+
+{result2}
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=GOOD, WARNING, SEVERE, CRITICAL, UNKNOWN,BAD|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=GOOD, WARNING, SEVERE, CRITICAL, UNKNOWN,BAD|progress=true|selectAll=false|preserveTaskOrder=true|showWiki=all.types of runbook conditions}
+{namespace=rsqa|task=make condition and severity BAD}
+{result2}
+{section}
+{section:type=new|title=Untitled Section}
+
+{section}
+{section:type=SOURCE|title=dt_ALL.types of runbook conditions_2|id=rssection_-1881409022871165176}
+##GENERATED CODE: DO NOT MODIFY
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>AJAX.DeleteMSOData{pre}={pre}AJAX.DeleteMSOData?ROOT=ALL.types of runbook conditions&NODE_ID=4&ANSWER_TEXT=AJAX.DeleteMSOData{pre}
+{pre}<div class="x-hidden" name="99999"></div>AJAX.GetMSOEntity{pre}={pre}AJAX.GetMSOEntity?ROOT=ALL.types of runbook conditions&NODE_ID=5&ANSWER_TEXT=AJAX.GetMSOEntity{pre}
+{decision}
+{section}

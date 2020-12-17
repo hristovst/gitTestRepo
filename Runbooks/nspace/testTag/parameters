@@ -1,0 +1,1 @@
+[{"name":"GIT_TAG_ID","displayName":"GIT_TAG_ID","type":"String","fieldTip":"","sourceName":"","source":"PARAM","hidden":false,"column":1,"order":0,"id":""},{"name":"SYNC_ALL_TAGS","displayName":"SYNC_ALL_TAGS","type":"String","fieldTip":"","sourceName":"false","source":"PARAM","hidden":false,"column":1,"order":1,"id":""}]

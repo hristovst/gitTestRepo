@@ -1,0 +1,11 @@
+{section:type=SOURCE|title=main|id=rssection_main|height=-1}
+1 Deploy Runbook
+
+<form action="$wiki.action.execute">
+<input type="hidden" name="action" value="EXECUTEPROCESS"/>
+<input type="hidden" name="wiki" value="$currdoc.getFullName()"/>
+<input type="hidden" name="PROBLEMID" value="NEW"/>
+Content Request SYS_ID: <input type="text" name="sys_id" value="" size="50"/><br>
+<input type="submit" value="Submit"/>
+</form>
+{section}

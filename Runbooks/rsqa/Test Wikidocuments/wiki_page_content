@@ -1,0 +1,204 @@
+{section:type=SOURCE|title=Header|id=rssection_main|height=-1}
+1 Test Wikidocuments
+
+* [Back to Test List>RSQA.Automated Home]</br></br>
+
+1.1 What This Runbook Is Trying to Test
+This runbook tests wikidocument manipulation.  It creates, copies, moves and deletes a wikidocument with the parameters specified below.
+
+1.1 Run Task
+<form name="form1" action="$wiki.action.execute">
+<input type="hidden" name="action" value="EXECUTEPROCESS" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="hidden" alt="RSQA_TEST_RUNBOOK" name="wiki" value="RSQA.Test Wikidocuments" />
+<table>
+<td>USERNAME: </td>
+<td><input type="text" alt="RSQA_TEST_PARAMS" name="USERNAME" value="resolve"size=30></td>
+</tr>
+<tr>
+<td>DOCNAME: </td>
+<td><input type="text" alt="RSQA_TEST_PARAMS" name="DOCNAME" value="TESTCreate"size=30></td>
+</tr>
+<tr>
+<td>NAMESPACE: </td>
+<td><input type="text" alt="RSQA_TEST_PARAMS" name="NAMESPACE" value="Test_example"size=30></td>
+</tr>
+<tr>
+<td>WIKI_CONTENT: </td>
+<td><input type="text" alt="RSQA_TEST_PARAMS" name="WIKI_CONTENT" value="Hello World!"size=30></td>
+</tr>
+
+<td colspan="2" align="right"><input type="button" name="Execute" value="Execute" onclick="$wiki.action.executeRunbook('form1');" /></td>
+</tr>
+</table>
+</form>
+
+1.1 Expected Action Tasks:
+<table>
+<tr>
+<td> Creates a Wiki Document using ESB. </td>
+</tr>
+<tr>
+<td> Copies a Wiki Document using ESB. </td>
+</tr>
+<tr>
+<td>Moves/renames a Wiki Document using ESB. </td>
+</tr>
+<tr>
+<td> Delete a Wiki Document using ESB. </td>
+</tr>
+
+
+</table>
+
+
+
+
+{result:refresh=false|refreshStopWiki=RSQA.Test Wikidocuments}
+wikidocument create#rsqa
+wikidocument copy#rsqa
+wikidocument move#rsqa
+wikidocument delete#rsqa
+{result}
+{section}
+{section:type=SOURCE|title=dt_auto_answer.my_test_dt_62|id=rssection_3493656219496727297}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.my_test_dt" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question}
+{pre}<div class="x-hidden" name="99999"></div>Doc3.Wiki Document Edit Menu{pre}={pre}Doc3.Wiki Document Edit Menu?ROOT=auto_answer.my_test_dt&NODE_ID=74&ANSWER_TEXT=Doc3.Wiki Document Edit Menu&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":">","operand":"WSDATA{SYSTEM}","taskName":"","outputName":"","id":""}]{pre}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Wikidocuments{pre}={pre}RSQA.Test Wikidocuments?ROOT=auto_answer.my_test_dt&NODE_ID=77&ANSWER_TEXT=RSQA.Test Wikidocuments&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":"<","operand":"WSDATA{SYSTEM}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_auto_answer.600_test_dt2_62|id=rssection_6371120069871250767}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.600_test_dt2" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question}
+{pre}<div class="x-hidden" name="99999"></div>Question{pre}={pre}auto_answer.600_test_dt2_Decision?ROOT=auto_answer.600_test_dt2&NODE_ID=75&ANSWER_TEXT=Question{pre}
+{decision}
+#end
+{section}
+
+
+{section:type=SOURCE|title=dt_auto_answer.600_test_dt1_62|id=rssection_4815451236363572287}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.600_test_dt1" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question}
+{pre}<div class="x-hidden" name="99999"></div>Doc3.Wiki Document Edit Menu{pre}={pre}Doc3.Wiki Document Edit Menu?ROOT=auto_answer.600_test_dt1&NODE_ID=74&ANSWER_TEXT=Doc3.Wiki Document Edit Menu&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":">","operand":"WSDATA{SYSTEM}","taskName":"","outputName":"","id":""}]{pre}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Wikidocuments{pre}={pre}RSQA.Test Wikidocuments?ROOT=auto_answer.600_test_dt1&NODE_ID=77&ANSWER_TEXT=RSQA.Test Wikidocuments&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":"<","operand":"WSDATA{SYSTEM}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_auto_answer.600_test_dt01_62|id=rssection_-1225135915723334447}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.600_test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=combobox|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=auto_answer.600_test_dt01&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_auto_answer.600_test_dt02_62|id=rssection_-4098874817781305174}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.600_test_dt02" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=auto_answer.600_test_dt02&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_0020.600_test_dt01_62|id=rssection_921228844029687399}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}all.types of runbook conditions?ROOT=0020.600_test_dt01&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_0020.600_test_dt02_62|id=rssection_-1760958508331584603}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt02" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}all.types of runbook conditions?ROOT=0020.600_test_dt02&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_0020.600_test_dt03_62|id=rssection_-1761091440499312414}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt03" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}all.types of runbook conditions?ROOT=0020.600_test_dt03&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_0020.600_test_dt1_62|id=rssection_5042365614858587411}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt1" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>Doc3.Wiki Document Edit Menu{pre}={pre}Doc3.Wiki Document Edit Menu?ROOT=0020.600_test_dt1&NODE_ID=74&ANSWER_TEXT=Doc3.Wiki Document Edit Menu&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":">","operand":"WSDATA{SYSTEM}","taskName":"","outputName":"","id":""}]{pre}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Wikidocuments{pre}={pre}RSQA.Test Wikidocuments?ROOT=0020.600_test_dt1&NODE_ID=77&ANSWER_TEXT=RSQA.Test Wikidocuments&EXPRESSION=[{"variableName":"RANDOM_NUMBER","operator":"<","operand":"WSDATA{SYSTEM}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_0020.600_test_dt2_62|id=rssection_-8543043909647365672}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt2" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>Question{pre}={pre}0020.600_test_dt2_Decision?ROOT=0020.600_test_dt2&NODE_ID=75&ANSWER_TEXT=Question{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_Test.600_test_dt01_62|id=rssection_-8658142780975965826}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "Test.600_test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}all.types of runbook conditions?ROOT=Test.600_test_dt01&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_AutoExec.test01_62|id=rssection_7980662791599859413}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "AutoExec.test01" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=combobox|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=AutoExec.test01&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_final_auto_answer.test_dt01_62|id=rssection_3545996871384976048}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "final_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=combobox|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=final_auto_answer.test_dt01&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_giao.AutoExec_62|id=rssection_4626899422010326262}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "giao.AutoExec" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=giao.AutoExec&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_gfinal_auto_answer.test_dt01_62|id=rssection_-6499055659548216717}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "gfinal_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=combobox|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=gfinal_auto_answer.test_dt01&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_nspace.test011_62|id=rssection_7918983822293026681}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.test011" && $!wikiContext.getAttribute("NODE_ID") == "62")
+{decision:type=radio|question=Question#5|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>ALL.types of runbook conditions{pre}={pre}ALL.types of runbook conditions?ROOT=nspace.test011&NODE_ID=86&ANSWER_TEXT=ALL.types of runbook conditions&EXPRESSION=[{"variableName":"REENA","operator":"=","operand":"WSDATA{Name2}","taskName":"","outputName":"","id":""}]{pre}
+{decision}
+#end
+{section}

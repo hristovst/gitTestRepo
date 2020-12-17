@@ -1,0 +1,16 @@
+{section:type=|title=Untitled Section}
+
+{section}
+{section:type=source|title=dt_latest.dt_7}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "latest.dt" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>Question{pre}={pre}latest.dt_Decision?ROOT=latest.dt&NODE_ID=18&ANSWER_TEXT=Question{pre}
+{decision}
+#end
+{section}
+{section:type=result|title=Untitled Section}
+{result2:title=|encodeSummary=false|refreshInterval=5|refreshCountMax=60|descriptionWidth=0|order=DESC|autoCollapse=false|collapsed=false|autoHide=false|filter=|progress=true|selectAll=true|includeStartEnd=true|preserveTaskOrder=true}
+
+{result2}
+{section}

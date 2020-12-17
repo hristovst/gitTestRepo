@@ -1,0 +1,23 @@
+def condition = "good";
+def severity = "good";
+def summary = "";
+def detail = RAW;
+
+if(RAW.contains("FAILED")) {
+    def lines = RAW.split("\n")
+	lines.each{ line ->
+		if (line =~ /^FAILED/) {
+			condition = "bad"
+			severity = "critical"
+			summary += line - "FAIL - ";
+		}
+	}
+}
+else {
+	summary = "The notification submitted successfully to: "+ INPUTS["TO"];
+}
+
+RESULT.condition = condition;
+RESULT.severity = severity;
+RESULT.summary = summary;
+RESULT.detail = detail;

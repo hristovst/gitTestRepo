@@ -1,0 +1,52 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="270" y="110" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" id="3">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="610" y="210" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="comment" description="comment#rsqa?out:=$FLOW{out}" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;SEVERITY&amp;Comment severity&quot;,&quot;CONDITION&amp;Comment condition&quot;,&quot;SUMMARY&amp;Comment summary&quot;,&quot;DETAIL&amp;Comment detailed description&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="comment#rsqa" detail="Displays a comment and description in the Problem Case" id="4">
+      <params>
+        <inputs>
+          <![CDATA[{"SUMMARY":"$PARAM{detail}","DETAIL":"$PARAM{detail}"}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="360" y="125" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="comment_test" description="comment_test#rsqa?CONDITION=$FLOW{good}" tooltip="undefined" href="comment_test#rsqa" detail="Displays a comment and description in the Problem Case" id="7">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="430" y="240" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="5">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="6">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="7" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="8">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="4" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="510" y="193.63636363636363" as="sourcePoint"/>
+          <mxPoint x="610" y="220.9090909090909" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

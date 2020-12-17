@@ -1,0 +1,104 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="290" y="40" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" merge="merge = ANY" id="3">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="285" y="590" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Subprocess label="CR.Deploy" description="" id="13">
+      <mxCell style="labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#ADD8E6;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="250" y="380" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Subprocess>
+    <Task label="Deploying" description="comment#resolve?SUMMARY=deploying" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;SUMMARY&amp;Comment summary&quot;,&quot;DETAIL&amp;Comment detailed description&quot;,&quot;CONDITION&amp;Comment condition&quot;,&quot;SEVERITY&amp;Comment severity&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="comment#resolve" detail="Displays a comment and description in the Problem Case" status="" id="4">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="250" y="120" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="Update CR History" description="Update CR History#resolve.cr?comment%3DDeploying%20Content%20Request%26user%3D%24PARAM%7BUSERID%7D%26status%3DDEPLOYING%26request%3D%24FLOW%7BCR%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;comment&amp;Description of change&quot;,&quot;user&amp;Change made by user&quot;,&quot;status&amp;Current CR Status&quot;,&quot;request&amp;Reference to sys_id of content_request entry&quot;],&quot;OUTPUT_DESC&quot;:[&quot;sys_id&amp;sys_id value of the history entry&quot;]}}" href="Update CR History#resolve.cr" detail="Update Content Request History" id="8">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="250" y="280" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="set state" description="set state#resolve.cr?valid_status%3DApproved%2C%20Deploying%26newstatus%3DDeploying" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;valid_status&amp;a comma separated list of valid current statuses to transition to the newstatus&quot;,&quot;newstatus&amp;new status to be set for valid eventid&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="set state#resolve.cr" detail="Check if the current state and the new state to transition to is valid" id="10">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="250" y="200" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="cr notification message" description="cr notification message#resolve.cr?body%3D%24FLOW%7BRESULTS%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;body&amp;optional body content for the message&quot;,&quot;view&amp;View name to select form&quot;],&quot;OUTPUT_DESC&quot;:[&quot;message&amp;notification content to be sent&quot;,&quot;subject&amp;notification subject to be sent&quot;]}}" href="cr notification message#resolve.cr" detail="create the notification message for CR" id="15">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="250" y="460" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="send notification" description="send notification#resolve.cr?send_assignee%3Dtrue%26send_team%3Dtrue%26send_manager%3Dtrue%26send_email%3Dtrue%26team_name%3DContent%20Request%20Managers%26message%3D%24OUTPUT%7Bmessage%7D%26subject%3D%24OUTPUT%7Bsubject%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;send_requester&amp;send notification to requester&quot;,&quot;send_assignee&amp;send notification to assignee&quot;,&quot;message&amp;message content&quot;,&quot;send_team&amp;true or false to send social post to team&quot;,&quot;subject&amp;message subject&quot;,&quot;send_manager&amp;true&quot;,&quot;send_email&amp;in addition to social post, also forward as email if defined&quot;,&quot;team_name&amp;name of the team stream to send the social post&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="send notification#resolve.cr" detail="Send the notification post to user social inbox and email if defined. Includes link to the CR record" id="41">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="250" y="530" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="5">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="7">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="41" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="9">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;strokeColor=green" parent="1" source="10" target="8" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="289.35483870967744" y="160" as="sourcePoint"/>
+          <mxPoint x="285.48387096774195" y="280" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="11">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="4" target="10" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="291.25" y="160" as="sourcePoint"/>
+          <mxPoint x="298.75" y="280" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="12">
+      <mxCell style="strokeColor=red" parent="1" source="10" target="3" edge="1">
+        <mxGeometry x="390" y="180" width="100" height="100" as="geometry">
+          <mxPoint x="390" y="280" as="sourcePoint"/>
+          <mxPoint x="490" y="180" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="170" y="300"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="14">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="8" target="13" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="299.71014492753625" y="320" as="sourcePoint"/>
+          <mxPoint x="295.2173913043478" y="630" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="16">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="13" target="15" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="299.5121951219512" y="420" as="sourcePoint"/>
+          <mxPoint x="295.3658536585366" y="590" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="42">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="15" target="41" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

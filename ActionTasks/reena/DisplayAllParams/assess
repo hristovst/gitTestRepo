@@ -1,0 +1,25 @@
+//$PARAM{DIRECTORY}
+ //PARAMS.each{
+   //detail += "\nParameter: ${it.key} value: ${PARAMS[it.key]}";
+ //}
+
+ def detail = " ";
+ //INPUTS.each{
+ //detail += "${INPUTS[it.key]}";
+   //detail += "\nInput : ${it.key} value: ${INPUTS[it.key]}";
+ //}
+ 
+detail += PARAMS["USERID"];
+ //detail += PARAMS["AFFINITY"];
+  //detail += PARAMS["PROBLEMID"];
+ //detail += PARAMS["PROBLEM_NUMBER"]; 
+detail += PARAMS["ACTIONNAME"];
+WSDATA["USERID"]=PARAMS["USERID"];
+WSDATA["ACTIONNAME"] = PARAMS["ACTIONNAME"];
+ 
+ 
+ 
+RESULT.condition = "good";
+RESULT.severity = "good";
+RESULT.summary = "PARAM result RR_TEST_AUTOMATION";
+RESULT.detail = detail;

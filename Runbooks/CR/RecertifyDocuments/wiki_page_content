@@ -1,0 +1,29 @@
+{section:type=SOURCE|title=dt_nspace12.newdtrt12_7|id=rssection_7176186412109582950}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace12.newdtrt12" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no3{pre}={pre}CR.APPROVED Process?ROOT=nspace12.newdtrt12&NODE_ID=21&ANSWER_TEXT=no3{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes3{pre}={pre}CR.APPROVED Process?ROOT=nspace12.newdtrt12&NODE_ID=19&ANSWER_TEXT=yes3{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.dtseven_7|id=rssection_-3627138435653332354}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.dtseven" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}RSQA.Comment?ROOT=nspace.dtseven&NODE_ID=11&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspace.dtseven&NODE_ID=13&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspaceseven.dtseven_7|id=rssection_4099239243248988545}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspaceseven.dtseven" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}RSQA.Comment?ROOT=nspaceseven.dtseven&NODE_ID=11&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspaceseven.dtseven&NODE_ID=13&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}

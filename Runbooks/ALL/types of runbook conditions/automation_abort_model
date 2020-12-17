@@ -1,0 +1,45 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" merge="merge = ALL" id="2">
+      <name>
+        start#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="275" y="55" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" merge="merge = ALL" id="3">
+      <name>
+        end#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="225" y="295" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Subprocess label="runbook" description="rsremote.runbook" id="4">
+      <mxCell style="labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#ADD8E6;gradientColor=white;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="170" y="160" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Subprocess>
+    <Edge label="" description="" order="99999" id="5">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="6">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="4" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

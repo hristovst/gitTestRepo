@@ -1,0 +1,5 @@
+//WORKSHEET["condition"] = "SEVERE"
+//WORKSHEET["severity"] = "SEVERE"
+
+RESULT.condition = "UNKNOWN"
+RESULT.severity = "UNKNOWN"

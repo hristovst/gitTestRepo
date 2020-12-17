@@ -1,0 +1,68 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="270" y="40" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" merge="merge = ANY" id="3">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="270" y="370" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="Reject" description="comment#resolve?SUMMARY=Rejected" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;SUMMARY&amp;Comment summary&quot;,&quot;DETAIL&amp;Comment detailed description&quot;,&quot;CONDITION&amp;Comment condition&quot;,&quot;SEVERITY&amp;Comment severity&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="comment#resolve" detail="Displays a comment and description in the Problem Case" status="" id="4">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="240" y="120" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="Update CR History" description="Update CR History#resolve.cr?comment%3DContent%20Request%20Rejected%26user%3D%24PARAM%7BUSERID%7D%26status%3DREJECT%26request%3D%24FLOW%7BCR%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;comment&amp;Description of change&quot;,&quot;user&amp;Change made by user&quot;,&quot;status&amp;Current CR Status&quot;,&quot;request&amp;Reference to sys_id of content_request entry&quot;],&quot;OUTPUT_DESC&quot;:[&quot;sys_id&amp;sys_id value of the history entry&quot;]}}" href="Update CR History#resolve.cr" detail="Update Content Request History" id="8">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="240" y="280" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="5">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="7">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="8" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="9">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;strokeColor=green" parent="1" source="10" target="8" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="289.4594594594595" y="160" as="sourcePoint"/>
+          <mxPoint x="285.4054054054054" y="310" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Task label="set state" description="set state#resolve.cr?valid_status%3DNew%26newstatus%3DRejected" tooltip="{\&quot;success\&quot;:true,\&quot;data\&quot;:{\&quot;INPUT_DESC\&quot;:[\&quot;valid_status&amp;a comma separated list of valid current statuses to transition to the newstatus\&quot;,\&quot;newstatus&amp;new status to be set for valid eventid\&quot;],\&quot;OUTPUT_DESC\&quot;:[]}}" href="set state#resolve.cr" detail="Check if the current state and the new state to transition to is valid" id="10">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" vertex="1" parent="1">
+        <mxGeometry x="240" y="190" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="11">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" edge="1" parent="1" source="4" target="10">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="290" y="160" as="sourcePoint"/>
+          <mxPoint x="290" y="280" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="12">
+      <mxCell style="strokeColor=red" edge="1" parent="1" source="10" target="3">
+        <mxGeometry x="530" y="230" width="100" height="100" as="geometry">
+          <mxPoint x="450" y="260" as="sourcePoint"/>
+          <mxPoint x="630" y="230" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="420" y="300"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

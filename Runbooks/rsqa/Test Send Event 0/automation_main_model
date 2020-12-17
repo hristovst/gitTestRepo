@@ -1,0 +1,31 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="240" y="20" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" id="3">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="220" y="250" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="send event" description="send event#resolve?EVENT_EVENTID=T123&amp;EVENT_REFERENCE=abc&amp;START=false&amp;WIKI=RSQA.Test Event Timeout 0&amp;REFERENCE=xyz&amp;PROBLEMID=LOOKUP" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;EVENT_EVENTID&amp;The event identifier to be triggered&quot;,&quot;PROCESSID&amp;The runbook execution processid (optional). Either the PROCESSID or the EVENT_REFERENCE parameter must be provided.&quot;,&quot;EVENT_REFERENCE&amp;The runtime user defined identifier used to specify a specific excution instance. Either the PROCESSID or the EVENT_REFERENCE parameter must be provided.&quot;,&quot;EVENT_START&amp;Set to &amp;amp;quot;true&amp;amp;quot; to start a new runbook process at the specified eventid to continue a &amp;amp;quot;hibernated&amp;amp;quot; process execution.&quot;,&quot;PROBLEMID&amp;The value of the worksheet to use for the new runbook to be executed. Set PROBLEMID to &amp;amp;quot;LOOKUP&amp;amp;quot; to use an existing worksheet of a executed runbook defined by REFERENCE or ALERTID. Requires START set to &amp;amp;quot;true&amp;amp;quot;.&quot;,&quot;WIKI&amp;The runbook to be executed starting at the eventid specified. START must be set to &amp;amp;quot;true&amp;amp;quot;.&quot;,&quot;REFERENCE&amp;This value is used to lookup and use the worksheet with the specified REFERENCE value. The PROBLEMID must be set to &amp;amp;quot;LOOKUP&amp;amp;quot;.&quot;,&quot;ALERTID&amp;This value is used to lookup and use the worksheet with the specified ALERTID value. The PROBLEMID must be set to &amp;amp;quot;LOOKUP&amp;amp;quot;.&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="send event#resolve" detail="Send message to trigger specified event" id="4">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="230" y="110" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="5">
+      <mxCell style="straight" parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="6">
+      <mxCell style="straight" parent="1" source="4" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

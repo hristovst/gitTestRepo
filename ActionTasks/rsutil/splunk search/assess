@@ -1,0 +1,52 @@
+// Set default values for status
+def condition = "GOOD";
+def severity = "GOOD";
+def summary = "";
+def detail = "";
+
+def resultList = [];
+
+//Process error conditions
+if(RAW.contains("ERROR"))
+{
+    condition = "BAD";
+    severity = "CRITICAL";
+	summary = "Splunk search execution failed";
+    detail = RAW;
+}
+else
+{
+    try
+    {
+        def xml = RAW[38..RAW.length() - 1];
+        XmlParser xmlParser = new XmlParser();
+        def resultsRoot = xmlParser.parseText(xml);
+        resultsRoot.'result'.each
+        {result->
+            //detail +=  "\nResult Record #: " + result.'@offset';
+            def recordMap = [:];
+            result.'field'.each
+            {field->
+                recordMap[field.'@k'] = field.'value'.'text'.text();
+                //detail += "\n\t" + field.'@k' + " : " + field.'value'.'text'.text();   
+            }
+            resultList.add(recordMap);
+        }
+        detail += "Search Results:\n" + resultList;
+        summary = "Search returned ${resultList.size()} records";
+        OUTPUTS["SPLUNK_SEARCH_RESULTS"] = resultList;
+    }
+    catch(Exception e)
+    {
+        condition = "BAD";
+        severity = "CRITICAL";
+    	summary = "Failed to parse search results";
+        detail = e.getMessage() + "\n" + e.getStackTrace() + "\n" + e.getCause();
+    }
+}
+
+// Save the results of the assessor for display in the Worksheet
+RESULT.condition = condition;
+RESULT.severity = severity;
+RESULT.summary = summary;
+RESULT.detail = detail;

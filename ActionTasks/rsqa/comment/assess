@@ -1,0 +1,22 @@
+def condition = INPUTS["CONDITION"]
+def severity = INPUTS["SEVERITY"]
+def summary = INPUTS["SUMMARY"]
+def detail = INPUTS["DETAIL"]
+
+if (!severity)
+{
+ severity = "good"
+}
+if (!condition)
+{
+ condition = "good"
+}
+if (!detail)
+{
+ detail = summary
+}
+
+RESULT.condition = condition
+RESULT.severity = severity
+RESULT.summary = summary
+RESULT.detail = detail

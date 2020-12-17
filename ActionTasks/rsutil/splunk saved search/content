@@ -1,0 +1,81 @@
+//Import Libraries
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import com.splunk.*;
+
+//Initialize variables and retrieve INPUTS
+def splunkHostPrimary = INPUTS["SPLUNK_HOST_PRIMARY"];
+def splunkHostBackup = INPUTS["SPLUNK_HOST_BACKUP"];
+int splunkPort = (INPUTS["SPLUNK_PORT"]?.isInteger()) ? INPUTS["SPLUNK_PORT"].toInteger() : 0;
+def splunkUsername = INPUTS["SPLUNK_USERNAME"];
+def splunkPassword = INPUTS["SPLUNK_PASSWORD"];
+def splunkSavedSearchName = INPUTS["SPLUNK_SS_NAME"];
+def splunkSavedSearchForce = (INPUTS["SPLUNK_SS_FORCE_DISPATCH"]?.toUpperCase() == "TRUE") ? true : false;
+def splunkSavedSearchActions = (INPUTS["SPLUNK_SS_TRIGGER_ACTIONS"]?.toUpperCase() == "TRUE") ? true : false;
+int splunkSavedSearchPollPeriod = (INPUTS["SPLUNK_SS_COMPLETED_POLL_PERIOD"]?.isInteger()) ? INPUTS["SPLUNK_SS_COMPLETED_POLL_PERIOD"].toInteger() : 500;
+long splunkSavedSearchTimeout = (INPUTS["SPLUNK_SS_TIMEOUT"]?.isLong()) ? INPUTS["SPLUNK_SS_TIMEOUT"].toLong() : 120000;
+def result = "";
+
+try
+{
+    //Validate input parameters
+    if((!splunkHostPrimary && !splunkHostBackup) || !splunkPort || !splunkUsername || !splunkPassword || !splunkSavedSearchName)
+	{
+		throw new Exception("Missing required input parameter(s)");
+	}
+	
+	//Create the login argument map and log in
+    def splunkHost = (splunkHostPrimary && splunkHostPrimary != "UNKNOWN") ? splunkHostPrimary : splunkHostBackup;
+    
+	ServiceArgs loginArgs = new ServiceArgs();
+    loginArgs.setHost(splunkHost);
+    loginArgs.setPort(splunkPort);
+    loginArgs.setUsername(splunkUsername);
+    loginArgs.setPassword(splunkPassword);
+    Service splunkService = Service.connect(loginArgs);
+	
+	Job splunkSearchJob;
+	//Retrieve the saved search and execute	
+    SavedSearch splunkSavedSearch = splunkService.getSavedSearches().get(splunkSavedSearchName);
+    
+    SavedSearchDispatchArgs dispatchArgs = new SavedSearchDispatchArgs();
+    dispatchArgs.setForceDispatch(splunkSavedSearchForce);
+    dispatchArgs.setTriggerActions(splunkSavedSearchActions);
+    long startTime = System.currentTimeMillis();
+    splunkSearchJob = splunkSavedSearch.dispatch(dispatchArgs);
+    
+    while (!splunkSearchJob.isDone()) 
+    {
+    	long currentTime = System.currentTimeMillis();
+    	if((startTime + splunkSavedSearchTimeout) < currentTime)
+    	{
+    		throw new Exception("Search execution exceeded specified timeout [${splunkSavedSearchTimeout} ms]");
+    	}
+    	else
+    	{
+    		Thread.sleep(splunkSavedSearchPollPeriod);
+    	}
+	}
+	
+	//Retrieve search results
+	InputStream searchResults = splunkSearchJob.getResults();
+	String line = "";
+	BufferedReader br = new BufferedReader(new InputStreamReader(searchResults, "UTF-8"));
+	while ((line = br.readLine()) != null) 
+	{
+	    result += line + "\n";
+	}
+	br.close();
+}
+catch(Exception e)
+{
+	//Prepare the error result and log the error
+	result = "ERROR: SPLUNK: An unexpected error occurred - ${e.getMessage()}";
+	LOG.error("SPLUNK : ${result}");
+}
+finally
+{
+	//Return the result
+	return result;
+}

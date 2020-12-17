@@ -1,0 +1,106 @@
+import com.splunk.*;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+//Initialize variables and retrieve INPUTS
+def splunkHostPrimary = INPUTS["SPLUNK_HOST_PRIMARY"];
+def splunkHostBackup = INPUTS["SPLUNK_HOST_BACKUP"];
+int splunkPort = (INPUTS["SPLUNK_PORT"]?.isInteger()) ? INPUTS["SPLUNK_PORT"].toInteger() : 0;
+def splunkUsername = INPUTS["SPLUNK_USERNAME"];
+def splunkPassword = INPUTS["SPLUNK_PASSWORD"];
+def splunkSearchQuery = INPUTS["SPLUNK_SEARCH_QUERY"];
+def splunkSearchLatestTime = INPUTS["SPLUNK_SEARCH_LATEST_TIME"];
+def splunkSearchEarliestTime = INPUTS["SPLUNK_SEARCH_EARLIEST_TIME"];
+int splunkSearchPollPeriod = (INPUTS["SPLUNK_SEARCH_COMPLETED_POLL_PERIOD"]?.isInteger()) ? INPUTS["SPLUNK_SEARCH_COMPLETED_POLL_PERIOD"].toInteger() : 500;
+long splunkSearchTimeout = (INPUTS["SPLUNK_SEARCH_TIMEOUT"]?.isLong()) ? INPUTS["SPLUNK_SEARCH_TIMEOUT"].toLong() : 120000;
+def result = "";
+
+Service splunkService;
+try
+{
+    //Validate input parameters
+	if((!splunkHostPrimary && !splunkHostBackup) || !splunkPort || !splunkUsername || !splunkPassword || !splunkSearchQuery)
+	{
+		throw new Exception("Missing required input parameter(s)");
+	}
+	
+	//Create the login argument map and log in
+    def splunkHost = (splunkHostPrimary && splunkHostPrimary != "UNKNOWN") ? splunkHostPrimary : splunkHostBackup;
+	ServiceArgs loginArgs = new ServiceArgs();
+    loginArgs.setHost(splunkHost);
+    loginArgs.setPort(splunkPort);
+    loginArgs.setUsername(splunkUsername);
+    loginArgs.setPassword(splunkPassword);
+    splunkService = Service.connect(loginArgs);
+	
+	//Prepare the parameters for the search
+	JobArgs splunkSearchArgs = new JobArgs();
+    splunkSearchArgs.setExecutionMode(JobArgs.ExecutionMode.NORMAL);
+	
+	SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+	SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+	if(splunkSearchEarliestTime)
+	{
+		Date dEarliest = sdf1.parse(splunkSearchEarliestTime);
+		def sEarliest = sdf2.format(dEarliest);
+        sEarliest = new StringBuffer(sEarliest).insert(sEarliest.length() - 2, ":").toString();
+		splunkSearchArgs.setEarliestTime(sEarliest);
+	}
+	if(splunkSearchLatestTime)
+	{
+		Date dLatest = sdf1.parse(splunkSearchLatestTime);
+		def sLatest = sdf2.format(dLatest);
+        sLatest = new StringBuffer(sLatest).insert(sLatest.length() - 2, ":").toString();
+		splunkSearchArgs.setLatestTime(sLatest);
+	}
+	
+    //Add search command to query if not present
+    if(!splunkSearchQuery.startsWith("search"))
+    {
+	    splunkSearchQuery = "search " + splunkSearchQuery;
+    }
+    
+    //Create and execute the search job
+    //splunkSearchQuery = "search * | head 100";
+    //splunkSearchQuery = 'search index = os source = ps host="splunkia-kn-u1" | multikv | dedup COMMAND | table COMMAND, CPUTIME | head 100';
+    long startTime = System.currentTimeMillis();
+    Job splunkSearchJob = splunkService.getJobs().create(splunkSearchQuery, splunkSearchArgs);
+    
+    //Retrieve and parse search results
+    while (!splunkSearchJob.isDone()) 
+    {
+        long currentTime = System.currentTimeMillis();
+    	if((startTime + splunkSearchTimeout) < currentTime)
+    	{
+    		throw new Exception("Saved search execution exceeded specified timeout [${splunkSearchTimeout} ms]");
+    	}
+    	else
+    	{
+    		Thread.sleep(splunkSearchPollPeriod);
+    	}
+	}
+	
+	//Retrieve search results
+	InputStream searchResults = splunkSearchJob.getResults();
+	String line = "";
+	BufferedReader br = new BufferedReader(new InputStreamReader(searchResults, "UTF-8"));
+	while ((line = br.readLine()) != null) 
+	{
+	    result += line + "\n";
+	}
+	br.close();
+}
+catch(Exception e)
+{
+	//Prepare the error result and log the error
+	result = "ERROR: SPLUNK: An unexpected error occurred - ${e.getMessage()}";
+	LOG.error("SPLUNK : ${result}");
+}
+finally
+{
+	//Return the result
+	return result;
+}

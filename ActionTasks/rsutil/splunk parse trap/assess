@@ -1,0 +1,30 @@
+// Set default values for status
+def condition = "GOOD";
+def severity = "GOOD";
+def summary = "";
+def detail = "";
+
+//Default Splunk trap OIDs from SPLUNK-ALERT-MIB
+def splunkSearchNum = INPUTS["SPLUNK_SEARCH_NUM"];
+def splunkSearchTerms = INPUTS["SPLUNK_SEARCH_TERMS"];
+def splunkSearchQuery = INPUTS["SPLUNK_SEARCH_QUERY"];
+def splunkSearchName = INPUTS["SPLUNK_SEARCH_NAME"];
+def splunkSearchReason = INPUTS["SPLUNK_SEARCH_REASON"];
+def splunkSearchUrl = INPUTS["SPLUNK_SEARCH_URL"];
+def splunkSearchTags = INPUTS["SPLUNK_SEARCH_TAGS"];
+def splunkSearchResultsPath = INPUTS["SPLUNK_SEARCH_RESULTS_PATH"];
+
+detail += "\nSplunk Search Num: " + splunkSearchNum;
+detail += "\nSplunk Search Terms: " + splunkSearchTerms;
+detail += "\nSplunk Search Query: " + splunkSearchQuery;
+detail += "\nSplunk Search Name: " + splunkSearchName;
+detail += "\nSplunk Search Reason: " + splunkSearchReason;
+detail += "\nSplunk Search URL: " + splunkSearchUrl;
+detail += "\nSplunk Search Tags: " + splunkSearchTags;
+detail += "\nSplunk Search Results Path: " + splunkSearchResultsPath;
+
+// Save the results of the assessor for display in the Worksheet
+RESULT.condition = condition;
+RESULT.severity = severity;
+RESULT.summary = summary;
+RESULT.detail = detail;

@@ -1,0 +1,29 @@
+{section:type=SOURCE|title=dt_nspace12.newdtrt12_9|id=rssection_1049892265107441406}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace12.newdtrt12" && $!wikiContext.getAttribute("NODE_ID") == "9")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspace12.newdtrt12&NODE_ID=15&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}RSQA.Comment?ROOT=nspace12.newdtrt12&NODE_ID=13&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.notree_7|id=rssection_-2738314779843894778}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.notree" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no1{pre}={pre}RSQA.Comment?ROOT=nspace.notree&NODE_ID=13&ANSWER_TEXT=no1{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes1{pre}={pre}RSQA.Comment?ROOT=nspace.notree&NODE_ID=11&ANSWER_TEXT=yes1{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspacetree.notree_7|id=rssection_-4121763816050796496}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspacetree.notree" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no1{pre}={pre}RSQA.Comment?ROOT=nspacetree.notree&NODE_ID=13&ANSWER_TEXT=no1{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes1{pre}={pre}RSQA.Comment?ROOT=nspacetree.notree&NODE_ID=11&ANSWER_TEXT=yes1{pre}
+{decision}
+#end
+{section}

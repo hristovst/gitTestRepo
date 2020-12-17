@@ -1,0 +1,117 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <name>
+        start#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="255" y="55" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <Task label="make condition and severity SEVERE_warning_good" description="make condition and severity BAD#rsqa?" tooltip="" href="" id="3">
+      <name>
+        make condition and severity BAD#rsqa
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="180" y="160" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <End label="End" description="" id="4">
+      <name>
+        end#resolve
+      </name>
+      <params>
+        <inputs>
+          <![CDATA[{}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;fontFamily=Helvetica;fontSize=11" parent="1" vertex="1">
+        <mxGeometry x="-10" y="630" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="make condition and severity CRITICAL" description="make condition and severity CRITICAL#rsqa?" tooltip="" href="" id="6">
+      <name>
+        make condition and severity CRITICAL#rsqa
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="150" y="240" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="make condition and severity WARNING" description="make condition and severity WARNING#rsqa?" tooltip="" href="" id="7">
+      <name>
+        make condition and severity WARNING#rsqa
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="260" y="320" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="make condition and severity SEVERE" description="make condition and severity SEVERE#rsqa?" tooltip="" href="" id="10">
+      <name>
+        make condition and severity SEVERE#rsqa
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="220" y="410" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="make condition and severityGOOD" description="make condition and severityGOOD#rsqa?" tooltip="" href="" id="12">
+      <name>
+        make condition and severityGOOD#rsqa
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="95" y="490" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="make condition and severity unknown" description="make condition and severity unknown#rsqa?" tooltip="" href="" id="18">
+      <name>
+        make condition and severity unknown#rsqa
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="20" y="560" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" order="99999" id="5">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="2" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="9">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="6" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="11">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="7" target="10" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="13">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="10" target="12" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="17">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="3" target="6" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="19">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="12" target="18" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="20">
+      <mxCell style="straight;noEdgeStyle=1" parent="1" source="18" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

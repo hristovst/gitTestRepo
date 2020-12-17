@@ -1,0 +1,60 @@
+{section:type=SOURCE|title=main|id=rssection_main|height=-1}
+1 Test Event
+
+* [Back to Test List>RSQA.Automated Home]  </br></br>
+
+1.1 What This Runbook Is Trying to Test
+This tests the functioning of Event on a stand-alone runbook. It stops on an event, and will eventually timeout if you don't send an event, either through the "RSQA.Send Event Manual", through the command line, or simply by pressing the button below.  See special instructions below.</br>
+
+1.1 Special Instructions
+Three ways to send an event to this runbook such that it will finish are 
+1. use "RSQA.Send Event Manual", input the following details into the form: EVENT_EVENTID="TE_9", EVENT_REFERENCE="TR_9", PROBLEMID="LOOKUP", WIKI="RSQA.Test Event 9" 
+1. Use the command line "\project\resolve3\dist\bin\execute.bat -u admin -p resolve -protocol http -ip 127.0.0.1 -port 8888 -event true -eventid "TE_9" -reference "TR_9" -rb "RSQA.Test Event 5" 
+1. Press the button below titled "Send Event".</br>
+<br></br>
+1.1 Run Task
+
+<form name="executeform">
+<input type="hidden" name="action" value="EXECUTEPROCESS" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="hidden" alt="RSQA_TEST_RUNBOOK" name="wiki" value="RSQA.Test Event 9" />
+<input type="button" value="Execute" onClick="$wiki.action.executeRunbook('executeform')"/>
+</form>
+
+click this form to send the event
+
+<form name="eventform">
+<input type="hidden" name="EVENT_EVENTID" value="TE_9" />
+<input type="hidden" name="EVENT_REFERENCE" value= "TR_9" />
+<input type="hidden" name="PROBLEMID" value= "LOOKUP" />
+<input type="hidden" name="WIKI" value="RSQA.Test Event 9" />
+<input type="hidden" name="REDIRECT" value= "/resolve/service/wiki/view/RSQA/Test Event 9" />
+<input type="button" value="Send Event" onclick="$wiki.action.executeEvent('eventform')"/>
+</form>
+
+
+1.1 Completed Results
+
+{result:refresh=false|refreshStopWiki=RSQA.Test Event 1}
+send event#rsqa
+event#resolve
+{result}
+
+{section}
+{section:type=SOURCE|title=dt_final_auto_answer.test_dt01_102|id=rssection_1522100585544117382}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "final_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "102")
+{decision:type=combobox|question=Question#1|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>reena_answer1 of Question1{pre}={pre}Equipment.Access Node Software Version AN19 Documentation?ROOT=final_auto_answer.test_dt01&NODE_ID=114&ANSWER_TEXT=reena_answer1 of Question1&EXECUTION_LIST=[{"name":"randomNumber2#reena","params":{}}]&EXPRESSION=[{"variableName":"OUTPUT","operator":"<=","operand":"5","taskName":"randomNumber2#reena","outputName":"OUTPUT","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_gfinal_auto_answer.test_dt01_102|id=rssection_-9070171674292707963}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "gfinal_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "102")
+{decision:type=combobox|question=Question#1|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>reena_answer1 of Question1{pre}={pre}Equipment.Access Node Software Version AN19 Documentation?ROOT=gfinal_auto_answer.test_dt01&NODE_ID=114&ANSWER_TEXT=reena_answer1 of Question1&EXECUTION_LIST=[{"name":"randomNumber2#reena","params":{}}]{pre}
+{decision}
+#end
+{section}

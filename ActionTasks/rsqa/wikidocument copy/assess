@@ -1,0 +1,17 @@
+def params = new HashMap()
+
+def username = INPUTS['USERNAME']
+def oldNamespace = INPUTS['OLD_NAMESPACE']
+def oldDocName = INPUTS['OLD_DOCNAME']
+def newNamespace = INPUTS['NEW_NAMESPACE']
+def newDocName = INPUTS['NEW_DOCNAME']
+def detail = 'Copied ' + oldNamespace.toString() + '.' + oldDocName.toString() + ' to ' + newNamespace.toString() + '.' + newDocName.toString();
+
+params.put("USERNAME", username.toString());
+params.put("WIKIDOC_OLD_NAMESPACE", oldNamespace.toString());
+params.put("WIKIDOC_NEW_NAMESPACE", newNamespace.toString());
+params.put("WIKIDOC_OLD_DOCUMENT_NAME", oldDocName.toString());
+params.put("WIKIDOC_NEW_DOCUMENT_NAME", newDocName.toString());
+
+ESB.sendMessage('RSVIEW', 'MWiki.copy', params)
+RESULT.summary = detail;

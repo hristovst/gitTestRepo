@@ -1,0 +1,41 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="400" y="70" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" id="9">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="400" y="310" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="find documents to archive" description="find documents to archive#resolve.cr" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[],&quot;OUTPUT_DESC&quot;:[&quot;ARCHIVE_DOCUMENTS&amp;List of Documents to Archive&quot;]}}" href="find documents to archive#resolve.cr" detail="Find documents that have passed their expire time and need to be archived.  Expire times are set by the u_expire_time value in the wikidoc." id="3">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="365" y="150" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="archive documents" description="archive documents#resolve.cr?ARCHIVE_DOCUMENTS%3D%24OUTPUT%7BARCHIVE_DOCUMENTS%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;ARCHIVE_DOCUMENTS&amp;List of documents to Archive.  Should be full name values.&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="archive documents#resolve.cr" detail="Archive the documents passed into ARCHIVE_DOCUMENTS.  The list of documents should be full name values.  Documents will be archived to KM_ARCHIVE unless there is a mapping for them in the namespace_mapping table." id="5">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="365" y="240" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="4">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="6">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="3" target="5" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="10">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="5" target="9" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

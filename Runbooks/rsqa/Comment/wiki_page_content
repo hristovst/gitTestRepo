@@ -1,0 +1,96 @@
+{section:type=SOURCE|title=dt_final_auto_answer.test_dt01_51|id=rssection_7200620690531468360}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "final_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "51")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>display action task{pre}={pre}RSQA.Test Send Event 0?ROOT=final_auto_answer.test_dt01&NODE_ID=100&ANSWER_TEXT=display action task&EXPRESSION=[{"variableName":"USERID","operator":"=","operand":"admin","taskName":"DisplayAllParams#reena","outputName":"USERID","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_nspace.test011_51|id=rssection_6578870637694013784}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.test011" && $!wikiContext.getAttribute("NODE_ID") == "51")
+{decision:type=radio|question=Question#3|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>display action task{pre}={pre}RSQA.Test Send Event 0?ROOT=nspace.test011&NODE_ID=100&ANSWER_TEXT=display action task&EXPRESSION=[{"variableName":"display_task","operator":"=","operand":"admin","taskName":"DisplayAllParams#reena","outputName":"USERID","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.testmest_5|id=rssection_-3190218509603188529}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.testmest" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>n2{pre}={pre}CR.RecertifyDocuments?ROOT=nspace.testmest&NODE_ID=11&ANSWER_TEXT=n2{pre}
+{pre}<div class="x-hidden" name="99999"></div>y2{pre}={pre}RSQA.Comment?ROOT=nspace.testmest&NODE_ID=13&ANSWER_TEXT=y2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.testmest2_5|id=rssection_8562693352239553452}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.testmest2" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>n2{pre}={pre}CR.RecertifyDocuments?ROOT=nspace.testmest2&NODE_ID=11&ANSWER_TEXT=n2{pre}
+{pre}<div class="x-hidden" name="99999"></div>y2{pre}={pre}RSQA.Comment?ROOT=nspace.testmest2&NODE_ID=13&ANSWER_TEXT=y2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace008.testmest2_5|id=rssection_-3604019552529393193}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace008.testmest2" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:type=combobox|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>n2{pre}={pre}CR.RecertifyDocuments?ROOT=nspace008.testmest2&NODE_ID=11&ANSWER_TEXT=n2{pre}
+{pre}<div class="x-hidden" name="99999"></div>y2{pre}={pre}RSQA.Comment?ROOT=nspace008.testmest2&NODE_ID=13&ANSWER_TEXT=y2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.dtfour_5|id=rssection_-6674992963407632816}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.dtfour" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}RSQA.Comment?ROOT=nspace.dtfour&NODE_ID=11&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspace.dtfour&NODE_ID=13&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspacefour.dtfour_5|id=rssection_-1692032065139269779}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspacefour.dtfour" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}RSQA.Comment?ROOT=nspacefour.dtfour&NODE_ID=11&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspacefour.dtfour&NODE_ID=13&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.dtfive_7|id=rssection_2338048067817393211}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.dtfive" && $!wikiContext.getAttribute("NODE_ID") == "7")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}RSQA.Comment?ROOT=nspace.dtfive&NODE_ID=11&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}Doc3.Creating the Runbook Wiki Document?ROOT=nspace.dtfive&NODE_ID=13&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspace.dtsix_5|id=rssection_-1487013934276962051}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.dtsix" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}CR.ArchiveDocuments?ROOT=nspace.dtsix&NODE_ID=13&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}RSQA.Comment?ROOT=nspace.dtsix&NODE_ID=11&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_nspacesix.dtsix_5|id=rssection_461303422403013444}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspacesix.dtsix" && $!wikiContext.getAttribute("NODE_ID") == "5")
+{decision:question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>no2{pre}={pre}CR.ArchiveDocuments?ROOT=nspacesix.dtsix&NODE_ID=13&ANSWER_TEXT=no2{pre}
+{pre}<div class="x-hidden" name="99999"></div>yes2{pre}={pre}RSQA.Comment?ROOT=nspacesix.dtsix&NODE_ID=11&ANSWER_TEXT=yes2{pre}
+{decision}
+#end
+{section}

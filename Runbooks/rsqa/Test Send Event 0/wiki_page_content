@@ -1,0 +1,111 @@
+{section:type=SOURCE|title=main|id=rssection_main|height=-1}
+1 Test Send Event 0</br>
+
+* [Back to Test List>RSQA.Automated Home]</br></br>
+
+1.1 What This Runbook Is Trying to Test
+This test sends the event to "RSQA.Test Event Timeout 0".  This also tests sending an event.  If you want to use "RSQA.Test Event Timeout 0" to test receipt of an event, then first start it and then run this runbook.  You do not have to run anything with this in order for it to succeed (in other words there doesn't have to be anything waiting for the event you're sending).</br>
+
+<form name="form1" action="$wiki.action.execute">
+<input type="hidden" alt="RSQA_TEST_RUNBOOK" name="WIKI" value="$doc.getFullName()" />
+<input type="hidden" name="action" value="EXECUTEPROCESS" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="button" name="Execute" value="Execute" onclick="$wiki.action.executeRunbook('form1');" />
+</form>
+
+{result}
+{result}
+{section}
+{section:type=SOURCE|title=dt_auto_answer.600_test_dt01_100|id=rssection_6641391578484152480}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.600_test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=auto_answer.600_test_dt01&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"ACTIONNAME","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_auto_answer.600_test_dt02_100|id=rssection_-5577306096773271637}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "auto_answer.600_test_dt02" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=auto_answer.600_test_dt02&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_0020.600_test_dt01_100|id=rssection_7882971310065880758}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=0020.600_test_dt01&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_0020.600_test_dt02_100|id=rssection_-8576349038298059010}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt02" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=0020.600_test_dt02&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_0020.600_test_dt03_100|id=rssection_4796621917939328531}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "0020.600_test_dt03" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=0020.600_test_dt03&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_Test.600_test_dt01_100|id=rssection_2540468428017698448}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "Test.600_test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=Test.600_test_dt01&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_AutoExec.test01_100|id=rssection_5349980376095631795}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "AutoExec.test01" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=combobox|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=AutoExec.test01&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_final_auto_answer.test_dt01_100|id=rssection_-2348436006413450077}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "final_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=final_auto_answer.test_dt01&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"ACTIONNAME","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_giao.AutoExec_100|id=rssection_4048952895371482694}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "giao.AutoExec" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=giao.AutoExec&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+
+{section:type=SOURCE|title=dt_gfinal_auto_answer.test_dt01_100|id=rssection_-4815416141988212548}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "gfinal_auto_answer.test_dt01" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=gfinal_auto_answer.test_dt01&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"ACTIONNAME","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}
+{section:type=SOURCE|title=dt_nspace.test011_100|id=rssection_5320115142260355206}
+##GENERATED CODE: DO NOT MODIFY
+#if ($!wikiContext.getAttribute("ROOT") == "nspace.test011" && $!wikiContext.getAttribute("NODE_ID") == "100")
+{decision:type=radio|question=Question|recommendation=}
+{pre}<div class="x-hidden" name="99999"></div>RSQA.Test Event 9{pre}={pre}RSQA.Test Event 9?ROOT=nspace.test011&NODE_ID=102&ANSWER_TEXT=RSQA.Test Event 9&EXPRESSION=[{"variableName":"displaytask2","operator":"=","operand":"DisplayAllParams#reena","taskName":"DisplayAllParams#reena","outputName":"ACTIONNAME","id":""}]{pre}
+{decision}
+#end
+{section}

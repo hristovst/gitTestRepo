@@ -1,0 +1,23 @@
+{section:type=SOURCE|title=Header|id=rssection_main|height=-1}
+1 RSQA WebHome
+1.1 A Note on RSQA
+There are four categories of RSQA, Automated tests: these can be run all together with no one monitoring them with any system that is functional, if it says the test passed it passed, no special setup or reading necessary; visual verification: These can be run as a group without monitoring, but when you check the results, specific checks or more in depth reading is necessary to verify that the test passed; Special Configuration: are any tests where you have to change your blueprint file in order for the test to run, these include tests with specific databases, connectors, and gateways; finally Manual Tests: these are tests that really require someone to walk through them a step at a time and therefore cannot be run without supervision.  Some of the tests in Visual Verification and Special Configuration overlap, and this is denoted in the name, in addition these tests will show up in both lists, however they are exactly the same test. </br>
+
+General Guidelines:
+1. If a test fails, check the reference column of the worksheet to make sure it doesn't read "This test is expected to fail", if this is the case, then the tests is a failure test and therefore will always fail.
+1. If you are creating a new test please make sure that it is documented a) what is being tested and b) if anything needs to be done to set this test up.
+1. If the condition column reads "BAD" but the severity column reads "GOOD", this means that the test is a failure test and did not actually fail.</br></br></br>
+
+1.1 RSQA Automated Tests</br>
+[RSQA.Automated Home]
+
+1.1 RSQA Visual Verification Tests</br>
+[RSQA.Visual Verification]
+
+1.1 RSQA Special Configuration Tests</br>
+[RSQA.Special Configuration]
+
+1.1 RSQA Manual Tests</br>
+[RSQA.Manual Home]
+
+{section}

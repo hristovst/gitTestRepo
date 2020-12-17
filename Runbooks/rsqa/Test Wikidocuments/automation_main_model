@@ -1,0 +1,76 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="420" y="50" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" id="9">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="520" y="660" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="wikidocument create" description="wikidocument create#rsqa?WIKI_CONTENT=$PARAM{WIKI_CONTENT}&amp;NAMESPACE=$PARAM{NAMESPACE}&amp;DOCNAME=$PARAM{DOCNAME}&amp;USERNAME=$PARAM{USERNAME}" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;WIKI_CONTENT&amp;What to put in the content of the generated wiki page&quot;,&quot;NAMESPACE&amp;The namespace of the document to be generated&quot;,&quot;DOCNAME&amp;The name of the document to be generated&quot;,&quot;USERNAME&amp;The username that will be used to create the document (affects permissions!)&quot;],&quot;OUTPUT_DESC&quot;:[&quot;NAMESPACE&amp;null&quot;,&quot;DOCNAME&amp;null&quot;]}}" href="wikidocument create#rsqa" detail="Creates a Wiki Document using ESB" id="4">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="270" y="170" width="150" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="wikidocument copy" description="wikidocument copy#rsqa?NEW_NAMESPACE=$PARAM{NAMESPACE}&amp;OLD_DOCNAME=$PARAM{DOCNAME}&amp;OLD_NAMESPACE=$PARAM{NAMESPACE}&amp;USERNAME=$PARAM{USERNAME}&amp;NEW_DOCNAME=TESTCopyit" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;NEW_NAMESPACE&amp;The new document namespace to copy to&quot;,&quot;OLD_DOCNAME&amp;The name of the document to be copied&quot;,&quot;OLD_NAMESPACE&amp;The namespace of the document to be copied&quot;,&quot;NEW_DOCNAME&amp;The new document name to copy to&quot;,&quot;USERNAME&amp;The username that will be used to create the document (affects permissions!)&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="wikidocument copy#rsqa" detail="Copies a Wiki Document using ESB" id="6">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="420" y="300" width="140" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="wikidocument move" description="wikidocument move#rsqa?NEW_NAMESPACE=$PARAM{NAMESPACE}&amp;OLD_DOCNAME=$PARAM{DOCNAME}&amp;USERNAME=$PARAM{USERNAME}&amp;NEW_DOCNAME=TESTMoveit&amp;OLD_NAMESPACE=$PARAM{NAMESPACE}" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;NEW_NAMESPACE&amp;The new document namespace to move to&quot;,&quot;OLD_DOCNAME&amp;The name of the document to be copied&quot;,&quot;USERNAME&amp;The username that will be used to create the document (affects permissions!)&quot;,&quot;NEW_DOCNAME&amp;The new document name to copy to&quot;,&quot;OLD_NAMESPACE&amp;The namespace of the document to be copied&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="wikidocument move#rsqa" detail="Moves/renames a Wiki Document using ESB" id="7">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="430" y="420" width="150" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="wikidocument delete" description="wikidocument delete#rsqa?NAMESPACE=$PARAM{NAMESPACE}&amp;USERNAME=$PARAM{USERNAME}&amp;DOCNAME=$PARAM{DOCNAME}" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;NAMESPACE&amp;The namespace of the document to be deleted&quot;,&quot;USERNAME&amp;The username that will be used to create the document (affects permissions!)&quot;,&quot;DOCNAME&amp;The name of the document to be deleted&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="wikidocument delete#rsqa" detail="Deletes a Wiki Document using ESB" id="8">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="430" y="510" width="170" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="5">
+      <mxCell style="straight" parent="1" source="2" target="4" edge="1">
+        <mxGeometry x="210" y="50" width="100" height="100" as="geometry">
+          <mxPoint x="210" y="150" as="sourcePoint"/>
+          <mxPoint x="310" y="50" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="10">
+      <mxCell style="straight" parent="1" source="4" target="6" edge="1">
+        <mxGeometry x="530" y="200" width="100" height="100" as="geometry">
+          <mxPoint x="530" y="300" as="sourcePoint"/>
+          <mxPoint x="630" y="200" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="11">
+      <mxCell style="straight" parent="1" source="6" target="7" edge="1">
+        <mxGeometry x="680" y="300" width="100" height="100" as="geometry">
+          <mxPoint x="500" y="340" as="sourcePoint"/>
+          <mxPoint x="780" y="300" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="12">
+      <mxCell style="straight" parent="1" source="7" target="8" edge="1">
+        <mxGeometry x="680" y="420" width="100" height="100" as="geometry">
+          <mxPoint x="680" y="520" as="sourcePoint"/>
+          <mxPoint x="780" y="420" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="13">
+      <mxCell style="straight" parent="1" source="8" target="9" edge="1">
+        <mxGeometry x="610" y="550" width="100" height="100" as="geometry">
+          <mxPoint x="610" y="650" as="sourcePoint"/>
+          <mxPoint x="710" y="550" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

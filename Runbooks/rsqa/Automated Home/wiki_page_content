@@ -1,0 +1,195 @@
+{section:type=SOURCE|title=main|id=rssection_main|height=-1}
+1 RSQA Tests
+* [back to RSQA WebHome>RSQA.WebHome]
+* [Back to Manual Home>RSQA.Manual Home]
+
+{section}
+{section:type=SOURCE|title=Static Tests|id=rssection_1310773418327|height=-1}
+1.1 RSQA Static Tests
+
+#set ($sql = "doc.UNamespace = 'RSQA' and doc.UName like 'Static%' ORDER BY doc.UName")
+
+#foreach ($item in $wiki.searchDocuments($sql))
+* [$item.fullName]
+#end
+{section}
+
+
+{section:type=SOURCE|title=Run Tests|id=rssection_1310667729992|height=-1}
+1.1 RSQA Tests
+
+
+#set ($excludes = "'RSQA Resolve3 Tests', 'RSQA Resolve2 Tests', 'JSUtils', 'jQuery171', 'Problem ID Setter'")
+#set ($sql = "doc.UNamespace = 'RSQA' and doc.UTag like '%RSQA_Automated' ORDER BY doc.UName")
+
+<form action="$wiki.action.execute" method="POST">
+<input type="hidden" name="action" value="EXECUTEPROCESS" />
+<input type="hidden" name="PROCESS_DEBUG" value="true" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="hidden" name="wiki" value="$doc.getFullName()" />
+<input type="hidden" name="tests" id="tests" value="" />
+
+#set ($count = 0)
+{table}
+Test | Description <span style="float:right">Repeat: <input type="text" name="REPEAT" id="DynamicRepeat" value="1" size="3"/> Interval: <input type="text" name="INTERVAL" id="DynamicInterval" size="3" value="1"/></span>
+#foreach ($item in $wiki.searchDocuments($sql))
+#set ($count = $count + 1)
+<input type="checkbox" name="test" value="$item.fullName"> [$item.fullName]  | $item.summary
+#end
+<input type="button" value="Select All" onclick="return checkAll()"/> <input type="button" value="Select None" onclick="return uncheckAll()" align="right"/> <input type="submit" value="Execute" onclick="return checkTests()" /> | Total: $count
+{table}
+
+</form>
+
+{pre}
+<script type="text/javascript">
+function checkTests()
+{
+  var test = document.getElementsByName("test");
+
+  if(test == null)
+  {
+    return false;
+  }
+  var testStr = "";
+  for(var i=0; i<test.length; i++)
+  {
+    if(test[i].checked)
+    {
+      testStr += test[i].value + ",";
+    }
+  }
+
+  if(testStr == "")
+  {
+    return false;
+  }
+  else
+  {
+    var tests = document.getElementById("tests");
+    tests.value = testStr;
+
+    return true;
+  }
+}
+
+function checkAll()
+{
+  var test = document.getElementsByName("test");
+  if(test == null)
+  {
+    return;
+  }
+  for(var i=0; i<test.length; i++)
+  {
+    test[i].checked = true;
+  }
+}
+
+function uncheckAll()
+{
+  var test = document.getElementsByName("test");
+  if(test == null)
+  {
+    return;
+  }
+  for(var i=0; i<test.length; i++)
+  {
+    test[i].checked = false;
+  }
+}
+</script>
+{pre}
+{section}
+{section:type=SOURCE|title=Create Static Test|id=rssection_1310777848612|height=-1}
+1.1 Create Static Test
+
+<form action="$wiki.action.execute">
+<input type="hidden" name="action" value="EXECUTETASK" />
+<input type="hidden" name="PROCESS_DEBUG" value="true" />
+<input type="hidden" name="PROBLEMID" value= "NEW" />
+<input type="hidden" name="ACTIONNAME" value="create static test#rsqa"/>
+<input type="hidden" name="SELECTED" id="Selected" value="" />
+<input type="hidden" name="UNSELECTED" id="Unselected" value="" />
+<input type="hidden" name="REPEAT" id="StaticRepeat" value="1" />
+<input type="hidden" name="INTERVAL" id="StaticInterval" value="1" />
+Test Name: <input type="text" name="TESTNAME" id="TestName" value=""/><br>
+<input type="submit" value="Create Static Test" id="CreateTest" onclick="return staticTest()"/>
+</form>
+
+{pre}
+<script type="text/javascript">
+function staticTest()
+{
+  var testName = document.getElementById("TestName").value;
+  testName = testName.replace(/^\s+|\s+\$/g, '');
+
+  if (testName == "")
+  {
+    alert("Must Supply a Valid Static Test Name");
+    return false;
+  }
+
+  var test = document.getElementsByName("test");
+
+  if(test == null)
+  {
+    return false;
+  }
+  var selectedStr = "";
+  var unselectedStr = "";
+  for(var i=0; i<test.length; i++)
+  {
+    if(test[i].checked)
+    {
+      selectedStr += test[i].value + ",";
+    }
+    else
+    {
+      unselectedStr += test[i].value + ",";
+    }
+  }
+  if(selectedStr == "")
+  {
+    alert("No Tests Selected");
+    return false;
+  }
+  else
+  {
+    var selected = document.getElementById("Selected");
+    selected.value = selectedStr;
+
+    var unselected = document.getElementById("Unselected");
+    unselected.value = unselectedStr;
+  }
+
+  var numberTest = /^\d+$/;
+
+  var dynamicRepeat = document.getElementById("DynamicRepeat").value;
+  dynamicRepeat = dynamicRepeat.replace(/^\s+|\s+\$/g, '');
+
+  if (!numberTest.test(dynamicRepeat))
+  {
+    alert("Repeat Must Have a Valid Number");
+    return false;
+  }
+  var staticRepeat = document.getElementById("StaticRepeat");
+  staticRepeat.value = dynamicRepeat;
+
+  var dynamicInterval = document.getElementById("DynamicInterval").value;
+  dynamicInterval = dynamicInterval.replace(/^\s+|\s+\$/g, '');
+
+  if (!numberTest.test(dynamicInterval))
+  {
+    alert("Interval Must Have a Valid Number");
+    return false;
+  }
+  var staticInterval = document.getElementById("StaticInterval");
+  staticInterval.value = dynamicInterval;
+
+  return true;
+}
+</script>
+{pre}
+
+{section}

@@ -1,0 +1,97 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="PROCESS_LOOP=TRUE" id="2">
+      <params>
+        <inputs>
+          <![CDATA[{"PROCESS_LOOP":"TRUE"}]]>
+        </inputs>
+        <outputs>
+          <![CDATA[{}]]>
+        </outputs>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="460" y="120" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" id="7">
+      <params>
+        <inputs>
+        </inputs>
+        <outputs>
+        </outputs>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="480" y="680" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="Loop" description="Loop#rsqa" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[],&quot;OUTPUT_DESC&quot;:[]}}" detail="null" href="Loop#rsqa" merge="merge = ANY" id="4">
+      <name>
+        Loop#rsqa
+      </name>
+      <params>
+        <inputs>
+        </inputs>
+        <outputs>
+        </outputs>
+      </params>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="440" y="330" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="comment_test" description="comment_test#rsqa" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;SUMMARY&amp;Comment summary&quot;,&quot;SEVERITY&amp;Comment severity&quot;,&quot;DETAIL&amp;Comment detailed description&quot;,&quot;CONDITION&amp;Comment condition&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="comment_test#rsqa" detail="Displays a comment and description in the Problem Case" merge="merge = ANY" id="22">
+      <name>
+        comment_test#rsqa
+      </name>
+      <params>
+        <inputs>
+        </inputs>
+        <outputs>
+        </outputs>
+      </params>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="270" y="330" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Precondition label="Continue?" description="FLOWS[&#39;continue&#39;] == &#39;true&#39;" order="9999" status="" href="FLOWS[&#39;continue&#39;] == &#39;true&#39;" id="31">
+      <mxCell style="rhombus;labelBackgroundColor=none;strokeColor=#FFA500;fillColor=#FFA500;gradientColor=white" parent="1" vertex="1">
+        <mxGeometry x="474" y="420" width="32" height="32" as="geometry"/>
+      </mxCell>
+    </Precondition>
+    <Edge label="" description="" id="23">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="25">
+      <mxCell style="strokeColor=green" parent="1" source="31" target="22" edge="1">
+        <mxGeometry x="380" y="300" width="100" height="100" as="geometry">
+          <mxPoint x="430" y="360" as="sourcePoint"/>
+          <mxPoint x="420" y="240" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="320" y="450"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="26">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="22" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="30">
+      <mxCell style="straight;noEdgeStyle=1;strokeColor=red" parent="1" source="31" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="32">
+      <mxCell style="straight;noEdgeStyle=1;strokeColor=black" parent="1" source="4" target="31" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="490.28985507246375" y="370" as="sourcePoint"/>
+          <mxPoint x="494.7826086956522" y="680" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

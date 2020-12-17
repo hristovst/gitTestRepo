@@ -1,0 +1,29 @@
+def params = new HashMap()
+
+
+
+def username = INPUTS['USERNAME']
+
+def namespace = INPUTS['NAMESPACE']
+
+def docname = INPUTS['DOCNAME']
+
+
+
+params.put("USERNAME", username.toString())
+
+params.put("WIKIDOC_NAMESPACE", namespace.toString())
+
+params.put("WIKIDOC_DOCUMENT_NAME", docname.toString())
+
+params.put("PURGE_WIKIDOCUMENT", true)
+
+
+
+def detail = 'Deleting the namespace and document created ' + namespace.toString() + '.' + docname.toString() ;
+
+
+
+ESB.sendMessage("RSVIEW", "MWiki.delete", params)
+
+RESULT.summary = detail;

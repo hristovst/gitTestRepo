@@ -1,0 +1,41 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="PROCESS_TIMEOUT%3D1200" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="430" y="30" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" id="5">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png" parent="1" vertex="1">
+        <mxGeometry x="440" y="280" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Task label="find documents to recertify" description="find documents to recertify#resolve.cr?" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;RECERTIFY_TIME&amp;Time (in seconds) before a document is considered expired&quot;,&quot;RECERTIFY_NAMESPACES&amp;All namespaces to exclude from expiration search&quot;,&quot;RECERTIFY_DOCNAMES&amp;Add document full names to exclude from expiration search&quot;],&quot;OUTPUT_DESC&quot;:[&quot;RECERTIFY_DOCUMENTS&amp;List of all document full names that have expired&quot;]}}" href="find documents to recertify#resolve.cr" detail="Find all runbooks, documents, and decision trees that have passed the re-certify age.  Re-Certify date is stored in CR.RECERTIFY.AGE.  Will search all documents from namespaces stored in CR.RECERTIFY.NAMESPACE and all documents listed in CR.RECERTIFY.DOCNAME" id="3">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="400" y="120" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="send recertify notice" description="send recertify notice#resolve.cr?GROUP_DOCUMENTS%3Dtrue%26RECERTIFY_DOCUMENTS%3D%24OUTPUT%7BRECERTIFY_DOCUMENTS%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;GROUP_DOCUMENTS&amp;Group expired documents into a single Content Request (CR)&quot;,&quot;RECERTIFY_DOCUMENTS&amp;List of document full names to expire&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="send recertify notice#resolve.cr" detail="send re-certify request for documents passed into INPUT value RECERTIFY_DOCUMENTS.  Documents should be fullname values." id="6">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="400" y="200" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="7">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="8">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="3" target="6" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="9">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="6" target="5" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

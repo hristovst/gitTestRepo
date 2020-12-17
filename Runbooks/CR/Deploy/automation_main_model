@@ -1,0 +1,141 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="PROCESS_DEBUG%3Dfalse%26PROCESS_LOOP%3Dtrue%26PROCESS_TIMEOUT%3D10" id="2">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png" parent="1" vertex="1">
+        <mxGeometry x="385" y="40" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" merge="merge = ANY" id="5">
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="387" y="850" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Precondition label="Checks Done?" description="OUTPUTS[&quot;CHECKS_DONE&quot;] == true" order="9999" status="" href="OUTPUTS[&quot;CHECKS_DONE&quot;] == true" id="18">
+      <mxCell style="rhombus;labelBackgroundColor=none;strokeColor=#FFA500;fillColor=#FFA500;gradientColor=white" parent="1" vertex="1">
+        <mxGeometry x="384" y="390" width="32" height="32" as="geometry"/>
+      </mxCell>
+    </Precondition>
+    <Task label="list of assets to deploy" description="list of assets to deploy#resolve.cr?REQUEST_ID%3D%24PARAM%7Bsys_id%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;REQUEST_ID&amp;content_request sys_id to pull request assets from&quot;],&quot;OUTPUT_DESC&quot;:[&quot;DOCUMENTS_TO_REPLACE&amp;List of Document Ids That are going to be overwritten by the deploy&quot;,&quot;DOCUMENTS&amp;Map of Documents to deploy (key=doc, value=destination)&quot;,&quot;DECISION_TREES&amp;Map of Decision Trees to deploy (key=doc, value=destination)&quot;,&quot;ACTION_TASKS&amp;Map of Action Tasks to deploy (key=task, value=destination)&quot;,&quot;RUNBOOKS&amp;Map of Runbooks to deploy (key=doc, value=destination)&quot;]}}" href="list of assets to deploy#resolve.cr" detail="Query the content_request_asset table for records that will need to be deployed" id="3">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="340" y="130" width="120" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="deploy assets" description="deploy assets#resolve.cr?DOCUMENTS%3D%24OUTPUT%7BDOCUMENTS%7D%26RUNBOOKS%3D%24OUTPUT%7BRUNBOOKS%7D%26DECISION_TREES%3D%24OUTPUT%7BDECISION_TREES%7D%26ACTION_TASKS%3D%24OUTPUT%7BACTION_TASKS%7D%26DEPLOY_NAMESPACE%3Dkm_prod&amp;LAST_UPDATED_TIMES:=$FLOW{LAST_UPDATED_TIMES}" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;DEFAULT_NAMESPACE&amp;Namespace to deploy assets to if none provided&quot;,&quot;DOCUMENTS&amp;Documents to deploy. Can be a map (key=doc, value=destination) or a list (List or comma separated String) of docs to move to the Default Namespace&quot;,&quot;OVERWRITE&amp;Overwrite existing documents/tasks if they exist&quot;,&quot;ACTION_TASKS&amp;Action Tasks to deployCan be a map (key=doc, value=destination) or a list (List or comma separated String) of docs to move to the Default Namespace&quot;,&quot;RUNBOOKS&amp;Runbooks to deployCan be a map (key=doc, value=destination) or a list (List or comma separated String) of docs to move to the Default Namespace&quot;,&quot;DECISION_TREES&amp;Decision Trees to deployCan be a map (key=doc, value=destination) or a list (List or comma separated String) of docs to move to the Default Namespace&quot;],&quot;OUTPUT_DESC&quot;:[&quot;LAST_UPDATED_TIMES&amp;Map of sys_updated_on times to compare&quot;]}}" href="deploy assets#resolve.cr" detail="Deploy selected assets (documents, runbooks, decision trees, action tasks) to a specified namespace" id="4">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="350" y="210" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="check assets have been deployed" description="check assets have been deployed#resolve.cr?REQUEST_ID%3D%24PARAM%7Bsys_id%7D%26LAST_UPDATED_TIMES%3D%24FLOW%7BLAST_UPDATED_TIMES%7D%26TIMEOUT%3D300&amp;DEPLOYED_DOCUMENTS:=$FLOW{DEPLOYED_DOCUMENTS}" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;LAST_UPDATED_TIMES&amp;Map of sys_updated_on times to compare&quot;,&quot;TIMEOUT&amp;Default Time to wait for assets to deploy before declaring the  deployment Aborted&quot;,&quot;REQUEST_ID&amp;content_request sys_id to pull request assets from&quot;],&quot;OUTPUT_DESC&quot;:[&quot;CHECKS_DONE&amp;Boolean of whether or not all asset deployments have been verified&quot;,&quot;DEPLOYED_DOCUMENTS&amp;List of Documents that have been successfully deployed&quot;]}}" href="check assets have been deployed#resolve.cr" detail="Check that Open Assets in the Request have been deployed correctly" merge="merge = ANY" id="9">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="310" y="310" width="180" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="comment" description="comment#resolve?SUMMARY%3DDeployment%20summary%26DETAIL%3D%24FLOW%7BRESULTS%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;SUMMARY&amp;Comment summary&quot;,&quot;DETAIL&amp;Comment detailed description&quot;,&quot;CONDITION&amp;Comment condition&quot;,&quot;SEVERITY&amp;Comment severity&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="comment#resolve" detail="Displays a comment and description in the Problem Case" merge="merge = ALL" id="12">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle;" parent="1" vertex="1">
+        <mxGeometry x="351" y="770" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="add comment journal" description="add comment journal#resolve.cr?tablename%3Dcontent_request%26fieldname%3Du_comments%26content%3D%24FLOW%7BRESULTS%7D%26userid%3D%24PARAM%7BUSERID%7D%26sys_id%3D%24PARAM%7Bsys_id%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;userid&amp;username&quot;,&quot;content&amp;message content&quot;,&quot;sys_id&amp;Content Request sys_id&quot;,&quot;fieldname&amp;journal field name&quot;,&quot;tablename&amp;entity table name&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="add comment journal#resolve.cr" detail="append message to comment" merge="merge = ANY" id="14">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle;dashed=1" parent="1" vertex="1">
+        <mxGeometry x="351" y="660" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="adjust document links" description="adjust document links#resolve.cr?DEPLOYED_DOCUMENTS%3D%24FLOW%7BDEPLOYED_DOCUMENTS%7D" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;DEPLOYED_DOCUMENTS&amp;Deployed Documents to Adjust&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="adjust document links#resolve.cr" detail="Adjust content, runbook, and decision tree links in deployed document.  Relies on the namespace_mapping table to determine what new links should be." id="16">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="351" y="560" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Task label="wait for Refs to be generated" description="wait#resolve?INTERVAL%3D5" tooltip="{&quot;success&quot;:true,&quot;data&quot;:{&quot;INPUT_DESC&quot;:[&quot;INTERVAL&amp;The number of seconds to wait&quot;],&quot;OUTPUT_DESC&quot;:[]}}" href="wait#resolve?" detail="Wait for the specified seconds" order="9999" status="" id="21">
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;verticalLabelPosition=middle;verticalAlign=middle" parent="1" vertex="1">
+        <mxGeometry x="320" y="480" width="160" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" id="6">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="2" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="7">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="3" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="8">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="12" target="5" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="10">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;strokeColor=green" parent="1" source="4" target="9" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="400.5128205128205" y="250" as="sourcePoint"/>
+          <mxPoint x="404.61538461538464" y="410" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="11">
+      <mxCell style="strokeColor=red" parent="1" source="4" target="14" edge="1">
+        <mxGeometry x="600" y="230" width="100" height="100" as="geometry">
+          <mxPoint x="600" y="330" as="sourcePoint"/>
+          <mxPoint x="700" y="230" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="520" y="390"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="13">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="14" target="12" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="400.3939393939394" y="600" as="sourcePoint"/>
+          <mxPoint x="396.45454545454544" y="730" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="15">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="16" target="14" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="401" y="510" as="sourcePoint"/>
+          <mxPoint x="401" y="680" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="17">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;strokeColor=black" parent="1" source="21" target="16" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="400" y="350" as="sourcePoint"/>
+          <mxPoint x="400" y="500" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="19">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1" parent="1" source="9" target="18" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="400" y="350" as="sourcePoint"/>
+          <mxPoint x="400" y="460" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="20">
+      <mxCell style="strokeColor=red" parent="1" source="18" target="9" edge="1">
+        <mxGeometry x="70" y="260" width="100" height="100" as="geometry">
+          <mxPoint x="70" y="360" as="sourcePoint"/>
+          <mxPoint x="170" y="260" as="targetPoint"/>
+          <Array as="points">
+            <mxPoint x="280" y="370"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" id="22">
+      <mxCell style="straight;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;noEdgeStyle=1;strokeColor=green" parent="1" source="18" target="21" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="400.0914285714286" y="421.90857142857146" as="sourcePoint"/>
+          <mxPoint x="400.88505747126436" y="560" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

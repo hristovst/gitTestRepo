@@ -1,0 +1,67 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" merge="merge = ALL" id="2">
+      <name>
+        start#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png;fontFamily=Helvetica;fontSize=11" vertex="1" parent="1">
+        <mxGeometry x="525" y="85" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <End label="End" description="" merge="merge = ALL" id="3">
+      <name>
+        end#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;fontFamily=Helvetica;fontSize=11" vertex="1" parent="1">
+        <mxGeometry x="525" y="565" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Edge label="" description="" order="99999" id="4">
+      <mxCell style="straight;noEdgeStyle=1" edge="1" parent="1" source="7" target="3">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Task label="tesk01" description="tesk01#qa_training?" tooltip="" href="" merge="merge = ALL" id="5">
+      <name>
+        tesk01#qa_training
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" vertex="1" parent="1">
+        <mxGeometry x="490" y="180" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" order="99999" id="6">
+      <mxCell style="straight;noEdgeStyle=1" edge="1" parent="1" source="2" target="5">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="540" y="115" as="sourcePoint"/>
+          <mxPoint x="540" y="565" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+    <Task label="task2" description="task2#qa_training?" tooltip="" href="" merge="merge = ALL" id="7">
+      <name>
+        task2#qa_training
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" vertex="1" parent="1">
+        <mxGeometry x="490" y="340" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <Edge label="" description="" order="99999" id="8">
+      <mxCell style="straight;noEdgeStyle=1" edge="1" parent="1" source="5" target="7">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="540" y="220" as="sourcePoint"/>
+          <mxPoint x="540" y="565" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>

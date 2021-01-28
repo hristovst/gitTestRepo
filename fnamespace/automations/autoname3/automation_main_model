@@ -1,0 +1,48 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Start label="Start" description="" merge="merge = ALL" id="2">
+      <name>
+        start#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/start.png;fontFamily=Helvetica;fontSize=11" vertex="1" parent="1">
+        <mxGeometry x="165" y="35" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </Start>
+    <Task label="comment" description="comment#resolve?" tooltip="" href="" merge="merge = ALL" id="3">
+      <name>
+        comment#resolve
+      </name>
+      <mxCell style="rounded;labelBackgroundColor=none;strokeColor=#A9A9A9;fillColor=#D3D3D3;gradientColor=white;fontFamily=Helvetica;fontSize=11;verticalLabelPosition=middle;verticalAlign=middle" vertex="1" parent="1">
+        <mxGeometry x="120" y="110" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Task>
+    <End label="End" description="" merge="merge = ALL" id="4">
+      <name>
+        end#resolve
+      </name>
+      <params>
+        <inputs/>
+        <outputs/>
+      </params>
+      <mxCell style="symbol;image=/resolve/jsp/model/images/symbols/end.png;fontFamily=Helvetica;fontSize=11" vertex="1" parent="1">
+        <mxGeometry x="165" y="195" width="30" height="30" as="geometry"/>
+      </mxCell>
+    </End>
+    <Edge label="" description="" order="99999" id="5">
+      <mxCell style="straight;noEdgeStyle=1" edge="1" parent="1" source="2" target="3">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+    <Edge label="" description="" order="99999" id="6">
+      <mxCell style="straight;noEdgeStyle=1" edge="1" parent="1" source="3" target="4">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Edge>
+  </root>
+</mxGraphModel>
